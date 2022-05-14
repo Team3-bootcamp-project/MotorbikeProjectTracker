@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
+const { eventSchema } = require('./Event')
 
 const projectSchema = new Schema({
   projectId: {
@@ -55,6 +56,9 @@ const projectSchema = new Schema({
       },
       electric: {
         type: String
+      },
+      suspension: {
+        type: String
       }
 
     }
@@ -67,13 +71,11 @@ const projectSchema = new Schema({
     type: Date,
     required: false
   },
-  //timeline
-  // date of work
-  // ???
-
+  timeline: [eventSchema]
 
 });
 
 const Project = model('Project', projectSchema);
+
 
 module.exports = Project;
