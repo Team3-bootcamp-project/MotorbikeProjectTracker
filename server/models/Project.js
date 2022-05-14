@@ -2,6 +2,9 @@ const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 const projectSchema = new Schema({
+  projectId: {
+    //id
+  },
   projectName: {
     type: String,
     required: 'Name the project!',
@@ -10,7 +13,8 @@ const projectSchema = new Schema({
     trim: true,
   },
   clientName: {
-    //Link to Client Schema
+    type: Schema.Types.ObjectId,
+    ref: 'Client',
     required: true,
     trim: true,
   },
@@ -63,7 +67,9 @@ const projectSchema = new Schema({
     type: Date,
     required: false
   },
-  //timeline???
+  //timeline
+  // date of work
+  // ???
 
 
 });
