@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
-const ProjectSchema = new Schema({
+const projectSchema = new Schema({
   projectName: {
     type: String,
     required: 'Name the project!',
@@ -65,9 +65,9 @@ const ProjectSchema = new Schema({
   },
   //timeline???
 
-  
+
 });
 
-const Thought = model('Thought', thoughtSchema);
+const Project = model('Project', projectSchema);
 
-module.exports = Thought;
+module.exports = Project;
