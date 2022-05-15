@@ -1,10 +1,20 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models');
+const { Project, Event } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
     // need to add "admin" and "client" stuff
+
+    // finds a single project
+    project: async ( parent, { projectId }) => {
+      return Project.findOne({_id: projectId})
+    },
+
+    // finds multiple projects and sorts by start date
+    projects: async () => {
+      return Project.find().sort({startedAt: -1})
+    },
     me: async (parent, args, context) => {
       if (context.user) {
         return User.findOne({ _id: context.user._id }).populate('thoughts');
