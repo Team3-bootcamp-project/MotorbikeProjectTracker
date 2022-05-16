@@ -3,9 +3,6 @@ const dateFormat = require('../utils/dateFormat');
 const { eventSchema } = require('./Event')
 
 const projectSchema = new Schema({
-  projectId: {
-    //id
-  },
   projectName: {
     type: String,
     required: 'Name the project!',

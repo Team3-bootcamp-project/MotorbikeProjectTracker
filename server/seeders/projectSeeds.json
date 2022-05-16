@@ -1,0 +1,20 @@
+[
+    {
+      "projectName": "1098 Cafe",
+      "clientName": "",
+      "bikeSpecs": [
+          {
+              "bikeYear": 2009,
+              "bikeMake": "Ducati",
+              "bikeModel": "1098S"
+          }
+      ],
+      "workToBeDone": [
+          {
+              "cosmetic": "paint"
+          }
+      ],
+      "estimatedCost": 500
+
+    }
+]
