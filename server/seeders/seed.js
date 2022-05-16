@@ -1,6 +1,6 @@
 const db = require('../config/connection');
 const { Client, Project } = require('../models');
-const ClientSeeds = require('./clientSeeds.json');
+const clientSeeds = require('./clientSeeds.json');
 const projectSeeds = require('./projectSeeds.json');
 
 db.once('open', async () => {
@@ -13,7 +13,7 @@ db.once('open', async () => {
     for (let i = 0; i < projectSeeds.length; i++) {
       const { _id, projectName } = await Project.create(projectSeeds[i]);
       const client = await Client.findOneAndUpdate(
-        { username: clientName },
+        // { email: email },
         {
           $addToSet: {
             projects: _id,

@@ -11,7 +11,8 @@ const projectSchema = new Schema({
     trim: true,
   },
   clientName: {
-    type: Schema.Types.ObjectId,
+    // type: Schema.Types.ObjectId, unsure about how to make them interact. 
+    type: String,
     ref: 'Client',
     required: true,
     trim: true,
