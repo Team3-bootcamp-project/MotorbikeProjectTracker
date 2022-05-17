@@ -1,6 +1,7 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
-const { eventSchema } = require('./Event')
+const { eventSchema } = require('./Event');
+const { clientSchema } = require('./Client');
 
 const projectSchema = new Schema({
   projectName: {
@@ -11,8 +12,8 @@ const projectSchema = new Schema({
     trim: true,
   },
   clientName: {
-    // type: Schema.Types.ObjectId, unsure about how to make them interact. 
-    type: String,
+    type: Schema.Types.ObjectId,
+    // type: String,
     ref: 'Client',
     required: true,
     trim: true,
