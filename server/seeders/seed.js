@@ -11,8 +11,9 @@ db.once('open', async () => {
     await Client.create(ClientSeeds);
 
     for (let i = 0; i < projectSeeds.length; i++) {
-      const { _id, projectName } = await Project.create(projectSeeds[i]);
+      const { _id, projectName, associatedClient } = await Project.create(projectSeeds[i]);
       const client = await Client.findOneAndUpdate(
+        {clientName: associatedClient},
         {
           $addToSet: {
             projects: _id,

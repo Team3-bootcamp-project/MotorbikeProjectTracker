@@ -1,6 +1,7 @@
 [
     {
       "projectName": "1098 Cafe",
+      "associatedClient": "Max Power",
       "bikeSpecs": [
           {
               "bikeYear": 2009,
@@ -19,6 +20,7 @@
     
     {
     "projectName": "900SS Track bike",
+    "associatedClient": "Vladimir Putin",
     "bikeSpecs": [
         {
             "bikeYear": 1999,
@@ -37,7 +39,61 @@
     ],
     "estimatedCost": 2000
 
-}
+},
+{
+    "projectName": "oajsdhfjhahsdf",
+    "associatedClient":"Vladimir Putin",
+    "bikeSpecs": [
+        {
+            "bikeYear": 2009,
+            "bikeMake": "Ducati",
+            "bikeModel": "1098S"
+        }
+    ],
+    "workToBeDone": [
+        {
+            "cosmetic": "paint"
+        }
+    ],
+    "estimatedCost": 500
+
+  },
+  {
+    "projectName": "pls",
+    "associatedClient": "Barrack Obama",
+    "bikeSpecs": [
+        {
+            "bikeYear": 2009,
+            "bikeMake": "Ducati",
+            "bikeModel": "1098S"
+        }
+    ],
+    "workToBeDone": [
+        {
+            "cosmetic": "paint"
+        }
+    ],
+    "estimatedCost": 500
+
+  },
+  {
+    "projectName": "stupid shit",
+    "associatedClient": "Sponge Bob",
+    "bikeSpecs": [
+        {
+            "bikeYear": 2009,
+            "bikeMake": "Ducati",
+            "bikeModel": "1098S"
+        }
+    ],
+    "workToBeDone": [
+        {
+            "cosmetic": "paint"
+        }
+    ],
+    "estimatedCost": 500
+
+  }
     
 
 ]
