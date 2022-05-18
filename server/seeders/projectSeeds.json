@@ -1,7 +1,6 @@
 [
     {
       "projectName": "1098 Cafe",
-      "clientName": "",
       "bikeSpecs": [
           {
               "bikeYear": 2009,
@@ -16,5 +15,29 @@
       ],
       "estimatedCost": 500
 
-    }
+    },
+    
+    {
+    "projectName": "900SS Track bike",
+    "bikeSpecs": [
+        {
+            "bikeYear": 1999,
+            "bikeMake": "Ducati",
+            "bikeModel": "900SS"
+        }
+    ],
+    "workToBeDone": [
+        {
+            "cosmetic": "paint",
+            "engineWork": "FCR carbs",
+            "electric": "R/R upgrade",
+            "suspension": "ohlins front end"
+            
+        }
+    ],
+    "estimatedCost": 2000
+
+}
+    
+
 ]

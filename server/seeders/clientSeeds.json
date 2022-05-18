@@ -1,0 +1,35 @@
+[
+  {
+    "clientName": "Max Power",
+    "email": "bkernighan@techfriends.dev",
+    "password": "password01",
+    "phone": 1234567890,
+    "projects": [
+
+    ]
+
+  },
+  {
+    "clientName": "Vladimir Putin",
+    "email": "mkanatalexander@techfriends.dev",
+    "password": "password02",
+    "phone": 1234567890,
+    "projects": [
+
+    ]
+
+  },
+
+  {
+    "clientName": "Barrack Obama",
+    "email": "wtls@techfriends.dev",
+    "password": "password03",
+    "phone": 1234567890
+  },
+  {
+    "clientName": "Sponge Bob",
+    "email": "kbeck@techfriends.dev",
+    "password": "password04",
+    "phone": 1234567890
+  }
+]

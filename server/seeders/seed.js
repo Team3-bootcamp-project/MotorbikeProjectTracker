@@ -8,12 +8,11 @@ db.once('open', async () => {
     await Project.deleteMany({});
     await Client.deleteMany({});
 
-    await Client.create(clientSeeds);
+    await Client.create(ClientSeeds);
 
     for (let i = 0; i < projectSeeds.length; i++) {
       const { _id, projectName } = await Project.create(projectSeeds[i]);
       const client = await Client.findOneAndUpdate(
-        { username: clientName },
         {
           $addToSet: {
             projects: _id,

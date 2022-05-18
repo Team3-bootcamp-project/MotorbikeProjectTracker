@@ -1,19 +1,14 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
-const { eventSchema } = require('./Event')
+const { eventSchema } = require('./Event');
+const { clientSchema } = require('./Client');
 
 const projectSchema = new Schema({
   projectName: {
     type: String,
-    required: 'Name the project!',
+    required: true,
     minlength: 1,
     maxlength: 280,
-    trim: true,
-  },
-  clientName: {
-    type: Schema.Types.ObjectId,
-    ref: 'Client',
-    required: true,
     trim: true,
   },
   startedAt: {
