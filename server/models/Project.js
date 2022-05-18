@@ -6,16 +6,9 @@ const { clientSchema } = require('./Client');
 const projectSchema = new Schema({
   projectName: {
     type: String,
-    required: 'Name the project!',
+    required: true,
     minlength: 1,
     maxlength: 280,
-    trim: true,
-  },
-  clientName: {
-    type: Schema.Types.ObjectId,
-    // type: String,
-    ref: 'Client',
-    required: true,
     trim: true,
   },
   startedAt: {

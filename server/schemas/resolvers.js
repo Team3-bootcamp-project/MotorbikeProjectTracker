@@ -16,7 +16,7 @@ const resolvers = {
       return Project.find().sort({startedAt: -1})
     },
     me: async (parent, args, context) => {
-      if (context.user) {
+      if (context.client) {
         return Client.findOne({ _id: context.client._id }).populate('projects');
       }
       throw new AuthenticationError('You need to be logged in!');
