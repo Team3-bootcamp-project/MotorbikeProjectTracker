@@ -4,9 +4,7 @@
     "email": "bkernighan@techfriends.dev",
     "password": "password01",
     "phone": 1234567890,
-    "projects": [
-
-    ]
+    "projects": []
 
   },
   {
@@ -14,9 +12,7 @@
     "email": "mkanatalexander@techfriends.dev",
     "password": "password02",
     "phone": 1234567890,
-    "projects": [
-
-    ]
+    "projects": []
 
   },
 
