@@ -12,7 +12,7 @@ const typeDefs = gql`
   type Project {
     _id: ID
     projectName: String
-    clientName: [Client]
+    associatedClient: [Client]
     startedAt: String
   }
 

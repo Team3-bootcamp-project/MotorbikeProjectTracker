@@ -11,6 +11,9 @@ const projectSchema = new Schema({
     maxlength: 280,
     trim: true,
   },
+  associatedClient: {
+    type: String,
+  },
   startedAt: {
     type: Date,
     default: Date.now,
