@@ -5,9 +5,7 @@
     "password": "password01",
     "phone": 1234567890,
     "projects": [
-      {
-        "projectName": "1098 Cafe"
-      }
+
     ]
 
   },
@@ -17,9 +15,7 @@
     "password": "password02",
     "phone": 1234567890,
     "projects": [
-      {
-        "projectName": "900SS Track bike"
-      }
+
     ]
 
   },
