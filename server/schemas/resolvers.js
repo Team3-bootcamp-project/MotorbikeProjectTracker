@@ -10,7 +10,10 @@ const resolvers = {
     project: async ( parent, { projectId }) => {
       return Project.findOne({_id: projectId})
     },
-
+    client: async (parent, {}) => {
+      return Client.find({});
+    },
+    
     // finds multiple projects and sorts by start date
     projects: async () => {
       return Project.find().sort({startedAt: -1})

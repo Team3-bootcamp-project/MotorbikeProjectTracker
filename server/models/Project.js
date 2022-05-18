@@ -1,7 +1,20 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
-const { eventSchema } = require('./Event');
 const { clientSchema } = require('./Client');
+
+
+const eventSchema = new Schema({
+  date : {
+      type: Date,
+  },
+  description: {
+      type: String
+  },
+  title: {
+      type: String
+  }
+})
+
 
 const projectSchema = new Schema({
   projectName: {
@@ -22,7 +35,7 @@ const projectSchema = new Schema({
   bikeSpecs: [
     {
       bikeYear: {
-        type: String,
+        type: Number,
         required: true,
         minlength: 1,
         maxlength: 280,
@@ -70,7 +83,10 @@ const projectSchema = new Schema({
 
 });
 
+
+const Event = model('Event', eventSchema );
+
 const Project = model('Project', projectSchema);
 
 
-module.exports = Project;
+module.exports = Project, Event ;
