@@ -64,14 +64,21 @@ const resolvers = {
       return { token, user };
     },
 
-    updateProject: async (parent, {clientName}, context) => {
+    createProject: async (parent, {projectName}, context) => {
+      //some logic
+      const project = await Project.create({projectName})
+      return project
+    },
+
+    updateProject: async (parent, {ProjectName, estimatedCost,}, context) => {
       //Update project
       //not working, but i think the function should be similar to this
-      if (context.client) {
-        const newProjectName = ''
+      //Need to add If statement to prevent reg users from running this.
+      if (context.Project) {
+        const newProjectName = 'something'
         const updatedClient = await Client.findByIdAndUpdate(
           {_id: context.client._id},
-          {$push: {projects: newprojectName}},
+          {$push: {projects: newProjectName}},
           {new: true}
         )
         return updatedClient;
