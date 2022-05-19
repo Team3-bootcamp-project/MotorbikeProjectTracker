@@ -5,13 +5,17 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
   Query: {
     // need to add "admin" and "client" stuff
+    //Admin would have access to all of the create routes
+    //Not sure how to implement it
+    //im guessing adding an IF statement to the routes
+    //IF client id =! 'predeterminedID' then throw an error
 
     // Finds a single Project by ID
     project: async ( parent, { projectId }) => {
       return Project.findOne({_id: projectId})
     },
 
-    //not working
+    //Finds all clients
     clients: async () => {
       return Client.find()
         .select("-__v -password")
@@ -34,11 +38,14 @@ const resolvers = {
   },
 
   Mutation: {
+
+    //this one seems to be kind of working, token is generated.
     addClient: async (parent, { email, password }) => {
       const user = await Client.create({ email, password });
       const token = signToken(user);
       return { token, user };
     },
+    //this one also generates tokens, so it essentially works. I dont really understand JWT that well.
     login: async (parent, { email, password }) => {
       const user = await Client.findOne({ email });
 
@@ -57,6 +64,41 @@ const resolvers = {
       return { token, user };
     },
 
+    createProject: async (parent, {projectName}, context) => {
+      //some logic
+      const project = await Project.create({projectName})
+      return project
+    },
+
+    updateProject: async (parent, {ProjectName, estimatedCost,}, context) => {
+      //Update project
+      //not working, but i think the function should be similar to this
+      //Need to add If statement to prevent reg users from running this.
+      if (context.Project) {
+        const newProjectName = 'something'
+        const updatedClient = await Client.findByIdAndUpdate(
+          {_id: context.client._id},
+          {$push: {projects: newProjectName}},
+          {new: true}
+        )
+        return updatedClient;
+      }
+      throw new AuthenticationError('You need to be an admin')
+    },
+
+    createEvent: async (parent, {projectId}, context) => {
+      //create timeline event
+      //not working
+      if (context.project) {
+        const updatedProject = await Project.findByIdAndUpdate(
+          {_id: context.project._id},
+          { $push: { timeline: {eventId}}},
+
+        );
+        return updatedProject;
+      }
+      throw new AuthenticationError('You need to be an admin');
+    }
     
   },
 };

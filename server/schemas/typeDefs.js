@@ -17,6 +17,7 @@ const typeDefs = gql`
     startedAt: String
     bikeSpecs: [String]
     workToBeDone: [workToBeDone]
+    timeline: [timeline]
   }
 
   type BikeSpecs {
@@ -31,6 +32,11 @@ const typeDefs = gql`
     brakes: String
     electric: String
     suspension: String
+  }
+  type timeline {
+    title: String
+    Description: String
+    Date: String
   }
 
   type Auth {
@@ -49,7 +55,11 @@ const typeDefs = gql`
   type Mutation {
     addClient(email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    # createProject
+    ## All these need to be modified, not sure what args they need
+    createProject: String
+    updateProject: String
+    createEvent: String
+    createProject: String
   }
 `;
 
