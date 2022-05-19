@@ -32,6 +32,11 @@ const typeDefs = gql`
     electric: String
     suspension: String
   }
+  type timeline {
+    title: String
+    Description: String
+    Date: String
+  }
 
   type Auth {
     token: ID!
