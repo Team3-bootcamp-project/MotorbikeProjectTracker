@@ -1,5 +1,5 @@
 const db = require('../config/connection');
-const { Client, Project } = require('../models');
+const { Client, Project, Event } = require('../models');
 const ClientSeeds = require('./clientSeeds.json');
 const projectSeeds = require('./projectSeeds.json');
 
@@ -16,7 +16,7 @@ db.once('open', async () => {
         {clientName: associatedClient},
         {
           $addToSet: {
-            projects: _id,
+            projects: _id
           },
         }
       );

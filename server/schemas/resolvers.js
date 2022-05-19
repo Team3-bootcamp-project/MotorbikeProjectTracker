@@ -6,15 +6,25 @@ const resolvers = {
   Query: {
     // need to add "admin" and "client" stuff
 
-    // finds a single project
+    // Finds a single Project by ID
     project: async ( parent, { projectId }) => {
       return Project.findOne({_id: projectId})
     },
 
+    //not working
+    clients: async () => {
+      return Client.find()
+        .select("-__v -password")
+        .populate("projects")
+    },
+    
     // finds multiple projects and sorts by start date
     projects: async () => {
       return Project.find().sort({startedAt: -1})
     },
+
+    //Finds logged in user's projects
+    //broken
     me: async (parent, args, context) => {
       if (context.client) {
         return Client.findOne({ _id: context.client._id }).populate('projects');

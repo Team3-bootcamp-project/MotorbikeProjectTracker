@@ -14,7 +14,9 @@
               "cosmetic": "paint"
           }
       ],
-      "estimatedCost": 500
+      "estimatedCost": 500,
+      "timeline": []
+
 
     },
     
@@ -41,7 +43,7 @@
 
 },
 {
-    "projectName": "oajsdhfjhahsdf",
+    "projectName": "Something Bike",
     "associatedClient":"Vladimir Putin",
     "bikeSpecs": [
         {
@@ -59,7 +61,7 @@
 
   },
   {
-    "projectName": "pls",
+    "projectName": "Bike Name",
     "associatedClient": "Barrack Obama",
     "bikeSpecs": [
         {
@@ -77,7 +79,7 @@
 
   },
   {
-    "projectName": "stupid shit",
+    "projectName": "Gt1000",
     "associatedClient": "Sponge Bob",
     "bikeSpecs": [
         {

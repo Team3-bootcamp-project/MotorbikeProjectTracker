@@ -6,6 +6,7 @@ const typeDefs = gql`
     clientName: String
     email: String
     password: String
+    phone: String
     projects: [Project]!
   }
 
@@ -14,8 +15,23 @@ const typeDefs = gql`
     projectName: String
     associatedClient: [Client]
     startedAt: String
+    bikeSpecs: [String]
+    workToBeDone: [workToBeDone]
   }
 
+  type BikeSpecs {
+    bikeYear: Int
+    bikeMake: String
+    bikeModel: String
+  }
+
+  type workToBeDone {
+    cosmetic: String
+    engineWork: String
+    brakes: String
+    electric: String
+    suspension: String
+  }
 
   type Auth {
     token: ID!
@@ -25,7 +41,7 @@ const typeDefs = gql`
   type Query {
     clients: [Client]
     client(email: String!): Client
-    projects(email: String): [Project]
+    projects: [Project]
     project(projectId: ID!): Project
     me: Client
   }
@@ -33,10 +49,7 @@ const typeDefs = gql`
   type Mutation {
     addClient(email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    # addThought(thoughtText: String!): Project
-    # addComment(thoughtId: ID!, commentText: String!): Project
-    # removeThought(thoughtId: ID!): Project
-    # removeComment(thoughtId: ID!, commentId: ID!): Project
+    # createProject
   }
 `;
 
