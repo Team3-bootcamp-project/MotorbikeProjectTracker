@@ -11,7 +11,7 @@ const resolvers = {
       return Project.findOne({_id: projectId})
     },
 
-    //not working
+    //Finds all clients
     clients: async () => {
       return Client.find()
         .select("-__v -password")
