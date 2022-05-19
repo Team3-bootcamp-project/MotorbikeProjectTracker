@@ -17,6 +17,7 @@ const typeDefs = gql`
     startedAt: String
     bikeSpecs: [String]
     workToBeDone: [workToBeDone]
+    timeline: [timeline]
   }
 
   type BikeSpecs {
@@ -54,7 +55,8 @@ const typeDefs = gql`
   type Mutation {
     addClient(email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    # createProject
+    createProject: String
+    createEvent: String
   }
 `;
 

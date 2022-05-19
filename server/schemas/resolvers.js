@@ -64,6 +64,16 @@ const resolvers = {
       return { token, user };
     },
 
+    createProject: async (parent, args, context) => {
+      //create new Project
+    },
+
+    createEvent: async (parent, args, context) => {
+      //create timeline event
+    }
+
+
+
     
   },
 };
