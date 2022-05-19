@@ -64,16 +64,34 @@ const resolvers = {
       return { token, user };
     },
 
-    createProject: async (parent, args, context) => {
-      //create new Project
+    updateProject: async (parent, {clientName}, context) => {
+      //Update project
+      //not working, but i think the function should be similar to this
+      if (context.client) {
+        const newProjectName = ''
+        const updatedClient = await Client.findByIdAndUpdate(
+          {_id: context.client._id},
+          {$push: {projects: newprojectName}},
+          {new: true}
+        )
+        return updatedClient;
+      }
+      throw new AuthenticationError('You need to be an admin')
     },
 
-    createEvent: async (parent, args, context) => {
+    createEvent: async (parent, {projectId}, context) => {
       //create timeline event
+      //not working
+      if (context.project) {
+        const updatedProject = await Project.findByIdAndUpdate(
+          {_id: context.project._id},
+          { $push: { timeline: {eventId}}},
+
+        );
+        return updatedProject;
+      }
+      throw new AuthenticationError('You need to be an admin');
     }
-
-
-
     
   },
 };
