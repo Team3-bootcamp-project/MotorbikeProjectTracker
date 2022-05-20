@@ -64,13 +64,13 @@ const resolvers = {
       return { token, user };
     },
 
-    createProject: async (parent, {projectName}, context) => {
-      //some logic
+    createProject: async (_parent, {projectName, estimatedCost}, context) => {
+      //not working yet
       const project = await Project.create({projectName})
       return project
     },
 
-    updateProject: async (parent, {ProjectName, estimatedCost,}, context) => {
+    updateProject: async (parent, {ProjectId }, context) => {
       //Update project
       //not working, but i think the function should be similar to this
       //Need to add If statement to prevent reg users from running this.
@@ -83,7 +83,7 @@ const resolvers = {
         )
         return updatedClient;
       }
-      throw new AuthenticationError('You need to be an admin')
+      throw new AuthenticationError('Error')
     },
 
     createEvent: async (parent, {projectId}, context) => {
