@@ -74,9 +74,7 @@ const resolvers = {
 
     updateProject: async (parent, args, context) => {
       //Update project
-       //Need to add If statement to prevent reg users from running this.
-       //if args.email = fuck@fuck.com
-       //then throw an error
+      //not working yet
       if (context.Project) {
         const newProjectName = args.ProjectName
         const updatedClient = await Project.findByIdAndUpdate(
@@ -89,19 +87,17 @@ const resolvers = {
       throw new AuthenticationError('Error')
     },
 
-    createEvent: async (parent, {title, description, date}, context) => {
+    createEvent: async (parent, { title, description, date}, _id) => {
       //create timeline event
       //not working
-      if (context.project) {
+
         const updatedProject = await Project.findByIdAndUpdate(
-          {_id: context.project._id},
-          { $push: { timeline: [title, description, date]}},
+          {_id: "62864ff73862996fb13a5a21"},
+          { $push: { timeline: [{title, description, date}]}},
 
         );
         return updatedProject;
-      }
-      throw new AuthenticationError('You need to be an admin');
-    }
+        }
     
   },
 };
