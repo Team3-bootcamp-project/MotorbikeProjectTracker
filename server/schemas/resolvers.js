@@ -87,14 +87,13 @@ const resolvers = {
       throw new AuthenticationError('Error')
     },
 
-    createEvent: async (parent, { title, description, date}, _id) => {
+    createEvent: async (parent, { title, description, projectId, date}, context) => {
       //create timeline event
-      //not working
 
         const updatedProject = await Project.findByIdAndUpdate(
-          {_id: "62864ff73862996fb13a5a21"},
-          { $push: { timeline: [{title, description, date}]}},
-
+          {_id: projectId },
+          { $push: { timeline: [{title, description, date: Date.now() }]}},
+          { new : true }
         );
         return updatedProject;
         }
