@@ -59,7 +59,6 @@ const typeDefs = gql`
     createProject: String
     updateProject: String
     createEvent: String
-    createProject: String
   }
 `;
 
