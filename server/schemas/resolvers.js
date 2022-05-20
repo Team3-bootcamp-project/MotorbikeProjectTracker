@@ -43,6 +43,7 @@ const resolvers = {
     addClient: async (parent, { email, password }) => {
       const user = await Client.create({ email, password });
       const token = signToken(user);
+      
       return { token, user };
     },
     //this one also generates tokens, so it essentially works. I dont really understand JWT that well.
@@ -64,21 +65,23 @@ const resolvers = {
       return { token, user };
     },
 
-    createProject: async (_parent, {projectName, estimatedCost}, context) => {
-      //not working yet
-      const project = await Project.create({projectName})
+    createProject: async (parent, {projectName, estimatedCost}, context) => {
+      //Works to create a project. Need to pass all the arguments.
+      const newProjectName = projectName
+      const project = await Project.create({projectName, estimatedCost})
       return project
     },
 
-    updateProject: async (parent, {ProjectId }, context) => {
+    updateProject: async (parent, args, context) => {
       //Update project
-      //not working, but i think the function should be similar to this
-      //Need to add If statement to prevent reg users from running this.
+       //Need to add If statement to prevent reg users from running this.
+       //if args.email = fuck@fuck.com
+       //then throw an error
       if (context.Project) {
-        const newProjectName = 'something'
-        const updatedClient = await Client.findByIdAndUpdate(
+        const newProjectName = args.ProjectName
+        const updatedClient = await Project.findByIdAndUpdate(
           {_id: context.client._id},
-          {$push: {projects: newProjectName}},
+          {$push: {projects: ProjectData}},
           {new: true}
         )
         return updatedClient;
@@ -86,13 +89,13 @@ const resolvers = {
       throw new AuthenticationError('Error')
     },
 
-    createEvent: async (parent, {projectId}, context) => {
+    createEvent: async (parent, {title, description, date}, context) => {
       //create timeline event
       //not working
       if (context.project) {
         const updatedProject = await Project.findByIdAndUpdate(
           {_id: context.project._id},
-          { $push: { timeline: {eventId}}},
+          { $push: { timeline: [title, description, date]}},
 
         );
         return updatedProject;
