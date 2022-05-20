@@ -16,8 +16,9 @@ const typeDefs = gql`
     associatedClient: [Client]
     startedAt: String
     bikeSpecs: [String]
+    estimatedCost: Float
     workToBeDone: [workToBeDone]
-    timeline: [timeline]
+    Timeline: [Timeline]
   }
 
   type BikeSpecs {
@@ -33,7 +34,7 @@ const typeDefs = gql`
     electric: String
     suspension: String
   }
-  type timeline {
+  type Timeline {
     title: String
     Description: String
     Date: String
@@ -56,9 +57,9 @@ const typeDefs = gql`
     addClient(email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     ## All these need to be modified, not sure what args they need
-    createProject: String
+    createProject(projectName: String!, estimatedCost: Float!): Project
     updateProject: String
-    createEvent: String
+    createEvent(title: String!, description: String!, Date: String): Timeline
   }
 `;
 
