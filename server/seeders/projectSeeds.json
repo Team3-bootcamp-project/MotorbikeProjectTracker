@@ -1,7 +1,7 @@
 [
     {
       "projectName": "1098 Cafe",
-      "associatedClient": "Max Power",
+      "associatedCustomer": "Max Power",
       "bikeSpecs": [
           {
               "bikeYear": 2009,
@@ -22,7 +22,7 @@
     
     {
     "projectName": "900SS Track bike",
-    "associatedClient": "Vladimir Putin",
+    "associatedCustomer": "Vladimir Putin",
     "bikeSpecs": [
         {
             "bikeYear": 1999,
@@ -44,7 +44,7 @@
 },
 {
     "projectName": "Something Bike",
-    "associatedClient":"Vladimir Putin",
+    "associatedCustomer":"Vladimir Putin",
     "bikeSpecs": [
         {
             "bikeYear": 2009,
@@ -62,7 +62,7 @@
   },
   {
     "projectName": "Bike Name",
-    "associatedClient": "Barrack Obama",
+    "associatedCustomer": "Barrack Obama",
     "bikeSpecs": [
         {
             "bikeYear": 2009,
@@ -80,7 +80,7 @@
   },
   {
     "projectName": "Gt1000",
-    "associatedClient": "Sponge Bob",
+    "associatedCustomer": "Sponge Bob",
     "bikeSpecs": [
         {
             "bikeYear": 2009,

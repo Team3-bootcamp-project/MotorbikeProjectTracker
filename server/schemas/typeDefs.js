@@ -1,9 +1,9 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-  type Client {
+  type Customer {
     _id: ID
-    clientName: String
+    customerName: String
     email: String
     password: String
     phone: String
@@ -13,7 +13,7 @@ const typeDefs = gql`
   type Project {
     _id: ID
     projectName: String
-    associatedClient: [Client]
+    associatedCustomer: [Customer]
     startedAt: String
     bikeSpecs: [String]
     estimatedCost: Float
@@ -42,19 +42,19 @@ const typeDefs = gql`
 
   type Auth {
     token: ID!
-    user: Client
+    user: Customer
   }
 
   type Query {
-    clients: [Client]
-    client(email: String!): Client
+    customers: [Customer]
+    customer(email: String!): Customer
     projects: [Project]
     project(projectId: ID!): Project
     me: Project
   }
 
   type Mutation {
-    addClient(email: String!, password: String!): Auth
+    addCustomer(email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     ## All these need to be modified, not sure what args they need
     createProject(projectName: String!, estimatedCost: Float!): Project

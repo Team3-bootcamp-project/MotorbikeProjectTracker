@@ -1,5 +1,5 @@
-const Client = require('./Client');
+const Customer = require('./Customer');
 const Project = require('./Project');
 
 
-module.exports = { Client, Project};
+module.exports = { Customer, Project};

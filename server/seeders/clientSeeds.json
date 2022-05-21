@@ -1,6 +1,6 @@
 [
   {
-    "clientName": "Max Power",
+    "customerName": "Max Power",
     "email": "bkernighan@techfriends.dev",
     "password": "password01",
     "phone": 1234567890,
@@ -8,7 +8,7 @@
 
   },
   {
-    "clientName": "Vladimir Putin",
+    "customerName": "Vladimir Putin",
     "email": "mkanatalexander@techfriends.dev",
     "password": "password02",
     "phone": 1234567890,
@@ -17,13 +17,13 @@
   },
 
   {
-    "clientName": "Barrack Obama",
+    "customerName": "Barrack Obama",
     "email": "wtls@techfriends.dev",
     "password": "password03",
     "phone": 1234567890
   },
   {
-    "clientName": "Sponge Bob",
+    "customerName": "Sponge Bob",
     "email": "kbeck@techfriends.dev",
     "password": "password04",
     "phone": 1234567890
