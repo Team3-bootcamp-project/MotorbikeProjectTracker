@@ -1,7 +1,5 @@
 import React from "react";
-import { Box, Heading, Stack, VStack, Text, Image} from '@chakra-ui/react';
-
-//Once logged in, hamburger menu needs to have "My Projects" button
+import { Box, Heading, Image, Stack, VStack, Text} from '@chakra-ui/react';
 
 function Feature({ title, desc, ...rest }) {
     return (
@@ -12,8 +10,7 @@ function Feature({ title, desc, ...rest }) {
     )
   }
   
-  //Users Projects
-  function Profile() {
+  function Homepage() {
     return (
       <VStack>
       <Stack p={8} mt={8} spacing={8} direction='row'>
@@ -37,4 +34,4 @@ function Feature({ title, desc, ...rest }) {
     )
   }
   
-  export default Profile;
+  export default Homepage;
