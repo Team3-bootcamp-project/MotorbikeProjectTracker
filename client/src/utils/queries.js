@@ -6,66 +6,86 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      thoughts {
-        _id
-        thoughtText
-        createdAt
+      }
+  }
+`;
+//GETS ALL PROJECTS TO POPULATE MAIN PAGE
+export const QUERY_PROJECTS = gql`
+  query getProjects {
+    projects {
+    projectName
+    associatedCustomer
+    startedAt
+    bikeSpecs {
+      bikeYear
+      bikeMake
+      bikeModel
+    }
+    estimatedCost
+    workToBeDone {
+      cosmetic
+      engineWork
+      brakes
+      electric
+      suspension
+    }
+    timeline {
+      title
+      description
+      date
+    }
+  }
+}
+`;
+
+
+
+//USED TO POPULATE SINGLE PROJECT PAGE
+
+export const QUERY_SINGLE_PROJECT = gql`
+  query getSingleProject($projectId: ID!) {
+    project(projectId: $projectId) {
+      projectName
+      associatedClient
+      statedAt
+      bikeSpecs {
+        bikeYear
+        bikeMake
+        bikeModel
+      }
+      workToBeDone {
+        cosmetic
+        engineWork
+        brakes
+        electric
+        suspension
       }
     }
   }
 `;
 
-export const QUERY_PROJECTS = gql`
-  query getProjects {
-    projects {
-      _id
-      projectName
-    }
-  }
-`;
-//Call from main page upon clicking card?asd
-export const QUERY_SINGLE_PROJECT = gql`
-  query getSingleProject($projectId: ID!) {
-    project(projectId: $projectId) {
-      _id
-      projectName
-      associatedClient
-      statedAt
-      bikeSpecs {
-        bikeYear
-        bikeMake
-        bikeModel
-      }
-      workToBeDone {
-        cosmetic
-        engineWork
-        brakes
-        electric
-        suspension
-      }
-    }
-  }
-`;
 //my project 
-export const QUERY_ME = gql`
-  query me {
-    me {
-      _id
-      projectName
-      associatedClient
-      statedAt
-      bikeSpecs {
-        bikeYear
-        bikeMake
-        bikeModel
-      }
-      workToBeDone {
-        cosmetic
-        engineWork
-        brakes
-        electric
-        suspension
-      }
-    }
-  }
-`;
+//not implemented
+
+// export const QUERY_ME = gql`
+//   query me {
+//     me {
+//       _id
+//       projectName
+//       associatedClient
+//       statedAt
+//       bikeSpecs {
+//         bikeYear
+//         bikeMake
+//         bikeModel
+//       }
+//       workToBeDone {
+//         cosmetic
+//         engineWork
+//         brakes
+//         electric
+//         suspension
+//       }
+//     }
+//   }
+// `;
