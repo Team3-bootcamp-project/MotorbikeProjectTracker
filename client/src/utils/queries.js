@@ -23,7 +23,7 @@ export const QUERY_PROJECTS = gql`
     }
   }
 `;
-//Call from main page upon clicking card?
+//Call from main page upon clicking card?asd
 export const QUERY_SINGLE_PROJECT = gql`
   query getSingleProject($projectId: ID!) {
     project(projectId: $projectId) {
