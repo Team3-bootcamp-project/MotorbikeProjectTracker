@@ -50,7 +50,7 @@ const typeDefs = gql`
     client(email: String!): Client
     projects: [Project]
     project(projectId: ID!): Project
-    me: Client
+    me: Project
   }
 
   type Mutation {
