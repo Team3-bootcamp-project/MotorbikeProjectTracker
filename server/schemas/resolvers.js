@@ -15,12 +15,21 @@ const resolvers = {
       return Project.findOne({_id: projectId})
     },
 
+
     //Finds all customers. not implemented
     // customers: async () => {
     //   return Client.find()
     //     .select("-__v -password")
     //     .populate("projects")
     // },
+
+    //Finds all clients
+    customers: async () => {
+      return Customer.find()
+        .select("-__v -password")
+        .populate("projects")
+    },
+
     
     // finds multiple projects and sorts by start date
     projects: async () => {
