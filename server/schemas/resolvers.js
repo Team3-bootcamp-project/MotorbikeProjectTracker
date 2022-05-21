@@ -24,11 +24,11 @@ const resolvers = {
     // },
 
     //Finds all clients
-    customers: async () => {
-      return Customer.find()
-        .select("-__v -password")
-        .populate("projects")
-    },
+    // customers: async () => {
+    //   return Customer.find()
+    //     .select("-__v -password")
+    //     .populate("projects")
+    // },
 
     
     // finds multiple projects and sorts by start date
