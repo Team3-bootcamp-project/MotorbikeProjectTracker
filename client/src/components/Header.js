@@ -11,27 +11,29 @@ function Header(){
                     <Heading>Bike Project Tracker</Heading>
 
                     <Spacer></Spacer>
-                    <ButtonGroup gap='.03' variant='ghost' size='sm' mt={2}>
-                    <Router>
-                    <Link to='../pages/Homepage'>
-                    <Button>
-                        Homepage
-                    </Button>
-                    </Link>
-                    <Link to='../pages/Login'>
-                    <Button>
-                        Login
-                    </Button>
-                    </Link>
-                    <Button>
-                        Gallery
-                    </Button>
-                    <Link to='../pages/Inquiries'>
-                    <Button>
-                        Inquiries
-                    </Button>
-                    </Link>
-                    </Router>
+                <ButtonGroup gap='.03' variant='ghost' size='sm' mt={2}>
+
+                        <Link to='../pages/Homepage'>
+                            <Button>
+                                Homepage
+                            </Button>
+                        </Link>
+
+                        <Link to='../pages/Login'>
+                            <Button>
+                                Login
+                            </Button>
+                        </Link>
+
+                           <Button>
+                                 Gallery
+                           </Button>
+                        <Link to='../pages/Inquiries'>
+                            <Button>
+                                Inquiries
+                            </Button>
+                        </Link>
+
                 </ButtonGroup>
 
                 <Box>
