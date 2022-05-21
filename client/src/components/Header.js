@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Heading, HStack, Spacer, Button, ButtonGroup, Flex} from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
+import { BrowserRouter as Router, Routes, Switch, Route, Link } from 'react-router-dom';
 
 function Header(){
     return(
@@ -11,22 +12,26 @@ function Header(){
 
                     <Spacer></Spacer>
                     <ButtonGroup gap='.03' variant='ghost' size='sm' mt={2}>
+                    <Router>
+                    <Link to='../pages/Homepage'>
                     <Button>
                         Homepage
                     </Button>
-
+                    </Link>
+                    <Link to='../pages/Login'>
                     <Button>
                         Login
                     </Button>
-
+                    </Link>
                     <Button>
                         Gallery
                     </Button>
-
+                    <Link to='../pages/Inquiries'>
                     <Button>
                         Inquiries
                     </Button>
-
+                    </Link>
+                    </Router>
                 </ButtonGroup>
 
                 <Box>

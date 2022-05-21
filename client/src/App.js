@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Switch, Route, Link } from 'react-router-dom';
 import {
   ChakraProvider,
   theme,
@@ -6,9 +7,9 @@ import {
 } from '@chakra-ui/react';
 import Header from './components/Header';
 import Homepage from './pages/Homepage';
-//import SingleProject from './SingleProject';
+// import SingleProject from './pages/SingleProject';
 //import Profile from './Profile';
-//import AdminProject from './AdminProject';
+import AdminProject from './pages/AdminProject';
 //import Inquiries from './Inquiries'
 
 
