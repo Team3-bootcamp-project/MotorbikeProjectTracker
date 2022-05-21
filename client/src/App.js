@@ -5,7 +5,12 @@ import {
   Flex,
 } from '@chakra-ui/react';
 import Header from './components/Header';
-import Homepage from './pages/Homepage';
+import {Homepage,
+        AdminProject,
+        Inquiries,
+        Profile,
+        SingleProject
+        } from './pages';
 //import SingleProject from './SingleProject';
 //import Profile from './Profile';
 //import AdminProject from './AdminProject';
@@ -17,13 +22,13 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <Flex>
-        <Header></Header>
+        <Header />
       </Flex>
 
       <Flex>
-        <Homepage></Homepage>
-        {/* <Profile></Profile> */}
-        {/* <SingleProject></SingleProject> */}
+        <Homepage />
+        <Profile />
+        <SingleProject />
         {/* <AdminProject></AdminProject> */}
         {/* <Inquiries></Inquiries> */}
       </Flex>
