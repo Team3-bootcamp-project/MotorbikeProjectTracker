@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { Project, Customer, Event } = require('../models');
+const { Project, Event, User } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -15,12 +15,21 @@ const resolvers = {
       return Project.findOne({_id: projectId})
     },
 
+
+    //Finds all customers. not implemented
+    // customers: async () => {
+    //   return Client.find()
+    //     .select("-__v -password")
+    //     .populate("projects")
+    // },
+
     //Finds all clients
     customers: async () => {
       return Customer.find()
         .select("-__v -password")
         .populate("projects")
     },
+
     
     // finds multiple projects and sorts by start date
     projects: async () => {
@@ -29,26 +38,18 @@ const resolvers = {
 
     //Finds logged in user's projects
     //broken
-    me: async (parent, args, context) => {
-      if (context.customer) {
-        return Customer.findOne({ _id: context.customer._id }).populate('projects');
-      }
-      throw new AuthenticationError('You need to be logged in!');
-    },
   },
 
   Mutation: {
-
-    //this one seems to be kind of working, token is generated.
-    addCustomer: async (parent, { email, password }) => {
-      const user = await Customer.create({ email, password });
+    addUser: async (parent, { username, email, password }) => {
+      const user = await User.create({ username, email, password });
       const token = signToken(user);
-      
       return { token, user };
     },
+
     //this one also generates tokens, so it essentially works. I dont really understand JWT that well.
     login: async (parent, { email, password }) => {
-      const user = await Customer.findOne({ email });
+      const user = await User.findOne({ email });
 
       if (!user) {
         throw new AuthenticationError('No user found with this email address');
@@ -77,12 +78,12 @@ const resolvers = {
       //not working yet
       if (context.Project) {
         const newProjectName = args.ProjectName
-        const updatedCustomer = await Project.findByIdAndUpdate(
+        const updatedProject = await Project.findByIdAndUpdate(
           {_id: context.customer._id},
           {$push: {projects: ProjectData}},
           {new: true}
         )
-        return updatedCustomer;
+        return updatedProject;
       }
       throw new AuthenticationError('Error')
     },

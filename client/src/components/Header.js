@@ -13,7 +13,7 @@ function Header(){
                     <Spacer></Spacer>
                 <ButtonGroup gap='.03' variant='ghost' size='sm' mt={2}>
 
-                        <Link to='../pages/Homepage'>
+                        <Link to='/'>
                             <Button>
                                 Homepage
                             </Button>
