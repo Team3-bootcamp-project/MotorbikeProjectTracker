@@ -13,7 +13,7 @@ import {Homepage,
         SingleProject
         } from './pages';
 //import SingleProject from './SingleProject';
-//import Profile from './Profile';
+// import Profile from './Profile';
 //import AdminProject from './pages/AdminProject';
 //import Inquiries from './Inquiries'
 
@@ -21,22 +21,26 @@ import {Homepage,
 
 function App() {
   return (
+    <Router>
     <ChakraProvider theme={theme}>
       <Flex>
         <Header />
       </Flex>
 
       <Flex>
-        <Homepage />
-        <Profile />
-        <SingleProject />
-        {/* <AdminProject></AdminProject> */}
-        {/* <Inquiries></Inquiries> */}
+        <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/Profile" element={<Profile />} />
+        <Route path="/SingleProject" element={<SingleProject />} />{/* <SingleProject /> */}
+        <Route path="/Inquiries" element={<Inquiries />} />
+        <Route path="/AdminProject" element={<AdminProject />} />
+        </Routes>
       </Flex>
 
     
       
     </ChakraProvider>
+    </Router>
   );
 }
 
