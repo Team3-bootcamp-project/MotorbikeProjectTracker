@@ -1,4 +1,6 @@
 import React from 'react';
+import * as React from 'react';
+import { ChakraProvider } from '@chakra-ui/react';
 import {
   ApolloClient,
   InMemoryCache,
@@ -9,11 +11,10 @@ import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
-import Signup from './pages/Signup';
 import Login from './pages/Login';
-import SingleThought from './pages/SingleThought';
+//import SingleThought from './pages/SingleThought';
 import Profile from './pages/Profile';
-import Header from './components/Header';
+//import Header from './components/Header';
 import Footer from './components/Footer';
 
 // Construct our main GraphQL API endpoint
