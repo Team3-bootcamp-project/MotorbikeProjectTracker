@@ -12,6 +12,18 @@ export const LOGIN_USER = gql`
     }
   }
 `;
+
+export const ADD_USER = gql`
+  mutation addUser($username: String!, $email: String!, $password: String!) {
+    addUser(username: $username, email: $email, password: $password) {
+      token
+      user {
+        _id
+        username
+      }
+    }
+  }
+`;
 //This should only be called by the Admin user when creating a client for a project?asd
 export const ADD_CLIENT = gql`
   mutation addClient($email: String!, $password: String!) {
@@ -31,18 +43,16 @@ export const CREATE_PROJECT = gql`
       projectName
       associatedClient
       startedAt
-      workToBeDone {
-    ##This should be an array of objects##                
-      }
+      workToBeDone 
     }
   }
 `;
  //This one is for adding events to the timeline
  //called by admin user when recording the work that was done. Not sure how to do it
 
-export const CREATE_EVENT = gql`
-  mutation createEvent($projectId: String!, $title: String!, $description: String!) {
+// export const CREATE_EVENT = gql`
+//   mutation createEvent($projectId: String!, $title: String!, $description: String!) {
 
-    }
+//     }
   
-`;
+// `;
