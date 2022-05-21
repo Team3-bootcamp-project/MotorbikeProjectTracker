@@ -1,5 +1,10 @@
 import React from "react";
 import { Box, Image, Heading, Center, Stack, VStack, Text, Wrap, WrapItem} from '@chakra-ui/react';
+import { useParams } from 'react-router-dom';
+import { useQuery } from '@apollo/client';
+
+import { QUERY_SINGLE_PROJECT } from '../utils/queries';
+
 
 function Feature({ title, desc, make, year, notes, ...rest }) {
     return (
@@ -13,12 +18,22 @@ function Feature({ title, desc, make, year, notes, ...rest }) {
     )
   }
 
+
 function SingleProject(){
+    const { ProjectId } = useParams();
+
+    const { loading, data } = useQuery(QUERY_SINGLE_PROJECT, {
+        // pass URL parameter
+        variables: { ProjectId: ProjectId },
+      });
+
+      const project = data?.project || {};
+ 
     return(
 
         <VStack w='100%'>
             <Center mt={8} mb={8} h='100px'>
-                <Heading>Project Name</Heading>
+                <Heading>{project.projectName}</Heading>
             </Center>
 
             <Wrap spacing='30px' align='center'>
