@@ -10,7 +10,8 @@ import {Homepage,
         AdminProject,
         Inquiries,
         Profile,
-        SingleProject
+        SingleProject,
+        Login
         } from './pages';
 
 import {
@@ -51,7 +52,8 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <Router>
+  <ApolloProvider client={client}>
+     <Router>
     <ChakraProvider theme={theme}>
       <Flex>
         <Header />
@@ -60,10 +62,11 @@ function App() {
       <Flex>
         <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/pages/Profile" element={<Profile />} />
-        <Route path="/pages/SingleProject" element={<SingleProject />} />
-        <Route path="/pages/Inquiries" element={<Inquiries />} />
-        <Route path="/pages/AdminProject" element={<AdminProject />} />
+        <Route path="/Profile" element={<Profile />} />
+        <Route path='/Login' element={<Login />}/>
+        <Route path="/SingleProject" element={<SingleProject />} />
+        <Route path="/Inquiries" element={<Inquiries />} />
+        <Route path="/AdminProject" element={<AdminProject />} />
         </Routes>
       </Flex>
 
@@ -71,6 +74,8 @@ function App() {
       
     </ChakraProvider>
     </Router>
+  </ApolloProvider>
+   
   );
 }
 

@@ -19,7 +19,7 @@ function Header(){
                             </Button>
                         </Link>
 
-                        <Link to='../pages/Login'>
+                        <Link to='/Login'>
                             <Button>
                                 Login
                             </Button>
@@ -28,7 +28,7 @@ function Header(){
                            <Button>
                                  Gallery
                            </Button>
-                        <Link to='../pages/Inquiries'>
+                        <Link to='/Inquiries'>
                             <Button>
                                 Inquiries
                             </Button>
