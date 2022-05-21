@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { Project, Client, Event } = require('../models');
+const { Project, Customer, Event } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -16,7 +16,7 @@ const resolvers = {
     },
 
     //Finds all clients
-    clients: async () => {
+    customers: async () => {
       return Client.find()
         .select("-__v -password")
         .populate("projects")
@@ -30,8 +30,8 @@ const resolvers = {
     //Finds logged in user's projects
     //broken
     me: async (parent, args, context) => {
-      if (context.client) {
-        return Client.findOne({ _id: context.client._id }).populate('projects');
+      if (context.customer) {
+        return Customer.findOne({ _id: context.customer._id }).populate('projects');
       }
       throw new AuthenticationError('You need to be logged in!');
     },
@@ -40,15 +40,15 @@ const resolvers = {
   Mutation: {
 
     //this one seems to be kind of working, token is generated.
-    addClient: async (parent, { email, password }) => {
-      const user = await Client.create({ email, password });
+    addCustomer: async (parent, { email, password }) => {
+      const user = await Customer.create({ email, password });
       const token = signToken(user);
       
       return { token, user };
     },
     //this one also generates tokens, so it essentially works. I dont really understand JWT that well.
     login: async (parent, { email, password }) => {
-      const user = await Client.findOne({ email });
+      const user = await Customer.findOne({ email });
 
       if (!user) {
         throw new AuthenticationError('No user found with this email address');
@@ -77,12 +77,12 @@ const resolvers = {
       //not working yet
       if (context.Project) {
         const newProjectName = args.ProjectName
-        const updatedClient = await Project.findByIdAndUpdate(
-          {_id: context.client._id},
+        const updatedCustomer = await Project.findByIdAndUpdate(
+          {_id: context.customer._id},
           {$push: {projects: ProjectData}},
           {new: true}
         )
-        return updatedClient;
+        return updatedCustomer;
       }
       throw new AuthenticationError('Error')
     },

@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
-const { clientSchema } = require('./Client');
+const { customerSchema } = require('./Customer');
 
 
 const eventSchema = new Schema({
@@ -27,7 +27,7 @@ const projectSchema = new Schema({
     maxlength: 280,
     trim: true,
   },
-  associatedClient: {
+  associatedCustomer: {
     type: String,
   },
   startedAt: {
