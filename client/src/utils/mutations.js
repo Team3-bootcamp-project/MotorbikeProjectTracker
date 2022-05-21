@@ -13,8 +13,8 @@ export const LOGIN_CLIENT = gql`
 `;
 //This should only be called by the Admin user when creating a client for a project?
 export const ADD_CLIENT = gql`
-  mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
+  mutation addClient($email: String!, $password: String!) {
+    addClient(email: $email, password: $password) {
       token
       user {
         _id
