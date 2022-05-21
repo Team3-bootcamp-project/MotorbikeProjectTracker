@@ -12,7 +12,7 @@ export const LOGIN_USER = gql`
     }
   }
 `;
-//This should only be called by the Admin user when creating a client for a project?
+//This should only be called by the Admin user when creating a client for a project?asd
 export const ADD_CLIENT = gql`
   mutation addClient($email: String!, $password: String!) {
     addClient(email: $email, password: $password) {
