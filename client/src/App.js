@@ -30,10 +30,10 @@ function App() {
       <Flex>
         <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/Profile" element={<Profile />} />
-        <Route path="/SingleProject" element={<SingleProject />} />{/* <SingleProject /> */}
-        <Route path="/Inquiries" element={<Inquiries />} />
-        <Route path="/AdminProject" element={<AdminProject />} />
+        <Route path="/pages/Profile" element={<Profile />} />
+        <Route path="/pages/SingleProject" element={<SingleProject />} />
+        <Route path="/pages/Inquiries" element={<Inquiries />} />
+        <Route path="/pages/AdminProject" element={<AdminProject />} />
         </Routes>
       </Flex>
 
