@@ -15,13 +15,11 @@ export const QUERY_USER = gql`
   }
 `;
 
-export const QUERY_THOUGHTS = gql`
-  query getThoughts {
-    thoughts {
+export const QUERY_PROJECTS = gql`
+  query getProjects {
+    projects {
       _id
-      thoughtText
-      thoughtAuthor
-      createdAt
+      projectName
     }
   }
 `;
