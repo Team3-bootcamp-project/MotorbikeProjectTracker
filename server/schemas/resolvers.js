@@ -17,7 +17,7 @@ const resolvers = {
 
     //Finds all clients
     customers: async () => {
-      return Client.find()
+      return Customer.find()
         .select("-__v -password")
         .populate("projects")
     },
