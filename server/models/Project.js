@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
-const { customerSchema } = require('./Customer');
+// const { customerSchema } = require('./Customer');
 
 
 const eventSchema = new Schema({
