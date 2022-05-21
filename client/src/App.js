@@ -4,8 +4,8 @@ import {
   theme,
   Flex,
 } from '@chakra-ui/react';
-import Header from './Header';
-import Homepage from './Homepage';
+import Header from './components/Header';
+import Homepage from './pages/Homepage';
 //import SingleProject from './SingleProject';
 //import Profile from './Profile';
 //import AdminProject from './AdminProject';
