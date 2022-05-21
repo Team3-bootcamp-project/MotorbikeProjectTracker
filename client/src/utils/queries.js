@@ -39,7 +39,9 @@ export const QUERY_PROJECTS = gql`
 `;
 
 
+
 //USED TO POPULATE SINGLE PROJECT PAGE
+
 export const QUERY_SINGLE_PROJECT = gql`
   query getSingleProject($projectId: ID!) {
     project(projectId: $projectId) {
