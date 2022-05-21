@@ -1,56 +1,47 @@
 import { gql } from '@apollo/client';
 
-export const LOGIN_USER = gql`
+//query for logging in
+export const LOGIN_CLIENT = gql`
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
       token
       user {
         _id
-        username
-      }
+          }
     }
   }
 `;
-
-export const ADD_USER = gql`
-  mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
+//This should only be called by the Admin user when creating a client for a project?
+export const ADD_CLIENT = gql`
+  mutation addClient($email: String!, $password: String!) {
+    addClient(email: $email, password: $password) {
       token
       user {
         _id
-        username
+        }
+    }
+  }
+`;
+//Creating a project
+export const CREATE_PROJECT = gql`
+  mutation createProject($projectName: String!) {
+    createProject(projectName: $projectName) {
+      _id
+      projectName
+      associatedClient
+      startedAt
+      workToBeDone {
+    ##This should be an array of objects##                
       }
     }
   }
 `;
+ //This one is for adding events to the timeline
+ //called by admin user when recording the work that was done. Not sure how to do it
 
-export const ADD_THOUGHT = gql`
-  mutation addThought($thoughtText: String!) {
-    addThought(thoughtText: $thoughtText) {
-      _id
-      thoughtText
-      thoughtAuthor
-      createdAt
-      comments {
-        _id
-        commentText
-      }
-    }
-  }
-`;
+export const CREATE_EVENT = gql`
+  mutation createEvent($projectId: String!, $title: String!, $description: String!) {
 
-export const ADD_COMMENT = gql`
-  mutation addComment($thoughtId: ID!, $commentText: String!) {
-    addComment(thoughtId: $thoughtId, commentText: $commentText) {
-      _id
-      thoughtText
-      thoughtAuthor
-      createdAt
-      comments {
-        _id
-        commentText
-        createdAt
-      }
     }
-  }
+  
 `;

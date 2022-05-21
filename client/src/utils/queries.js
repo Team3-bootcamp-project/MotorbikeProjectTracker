@@ -25,35 +25,48 @@ export const QUERY_THOUGHTS = gql`
     }
   }
 `;
-
-export const QUERY_SINGLE_THOUGHT = gql`
-  query getSingleThought($thoughtId: ID!) {
-    thought(thoughtId: $thoughtId) {
+//Call from main page upon clicking card?
+export const QUERY_SINGLE_PROJECT = gql`
+  query getSingleProject($projectId: ID!) {
+    project(projectId: $projectId) {
       _id
-      thoughtText
-      thoughtAuthor
-      createdAt
-      comments {
-        _id
-        commentText
-        commentAuthor
-        createdAt
+      projectName
+      associatedClient
+      statedAt
+      bikeSpecs {
+        bikeYear
+        bikeMake
+        bikeModel
+      }
+      workToBeDone {
+        cosmetic
+        engineWork
+        brakes
+        electric
+        suspension
       }
     }
   }
 `;
-
+//my project 
 export const QUERY_ME = gql`
   query me {
     me {
       _id
-      username
-      email
-      thoughts {
-        _id
-        thoughtText
-        thoughtAuthor
-        createdAt
+      projectName
+      associatedClient
+      statedAt
+      bikeSpecs {
+        bikeYear
+        bikeMake
+        bikeModel
+      }
+      workToBeDone {
+        cosmetic
+        engineWork
+        brakes
+        electric
+        suspension
       }
     }
   }
