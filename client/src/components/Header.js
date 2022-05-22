@@ -16,31 +16,37 @@ function Header(){
                     <Heading>Bike Project Tracker</Heading>
 
                     <Spacer></Spacer>
-                <ButtonGroup gap='.03' variant='ghost' size='sm' mt={2}>
+                    
+                    <ButtonGroup gap='.03' variant='ghost' size='sm' mt={2}>
                     
                         <Link to='/'>
                             <Button>
                                 Homepage
                             </Button>
                         </Link>
+
                         {Auth.loggedIn() ? (
                         <>
-                        <Link to='/Login'>
+
+                        <Link to='/AdminProject'>
                             <Button>
-                            {Auth.getProfile().data.username}
+                            PROJECT MANAGEMENT
                             </Button>
                         </Link>
+
                             <Button className="btn btn-lg btn-light m-2" onClick={logout}>
                             Logout
                             </Button>
+
                             </>
                            ) :(
-                               <Link to='/Login'>
-                           <Button>
-                                 Login
-                           </Button>
+                            <Link to='/Login'>
+                                <Button>
+                                        Admin Login
+                                </Button>
                            </Link>
                            )}
+
                         <Link to='/Inquiries'>
                             <Button>
                                 Inquiries

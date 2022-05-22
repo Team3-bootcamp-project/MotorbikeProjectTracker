@@ -45,9 +45,10 @@ export const QUERY_PROJECTS = gql`
 export const QUERY_SINGLE_PROJECT = gql`
   query getSingleProject($projectId: ID!) {
     project(projectId: $projectId) {
+      _id
       projectName
-      associatedClient
-      statedAt
+      associatedCustomer
+      startedAt
       bikeSpecs {
         bikeYear
         bikeMake

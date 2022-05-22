@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Image, Heading, Center, Stack, VStack, Text, Wrap, WrapItem} from '@chakra-ui/react';
+
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
@@ -19,16 +20,21 @@ function Feature({ title, desc, make, year, notes, ...rest }) {
   }
 
 
-function SingleProject(){
-    const { ProjectId } = useParams();
-
+const  SingleProject = () => {
+    const { projectId } = useParams();
+console.log(projectId)
     const { loading, data } = useQuery(QUERY_SINGLE_PROJECT, {
         // pass URL parameter
-        variables: { ProjectId: ProjectId },
+        variables: { projectId: projectId },
       });
 
       const project = data?.project || {};
- 
+      console.log(project)
+
+      if (loading) {
+        return <div>Loading...</div>;
+      }
+    
     return(
 
         <VStack w='100%'>
