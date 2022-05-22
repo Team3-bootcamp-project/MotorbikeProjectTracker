@@ -34,6 +34,10 @@ console.log(projectId)
       if (loading) {
         return <div>Loading...</div>;
       }
+
+      const Make = `Make: ${project.bikeSpecs[0].bikeMake}`
+      const Year = `Year: ${project.bikeSpecs[0].bikeYear}`
+      
     
     return(
 
@@ -60,8 +64,8 @@ console.log(projectId)
             <Stack p={8} spacing={8} direction='row'>
                  <Feature
                     title='Bike Details'
-                    make='Make:'
-                    year='Year:'
+                    make={Make}
+                    year={Year}
                     notes='Notes:'
                     desc='The future can be even brighter but a goal without a plan is just a wish'
                     spacing = {15}
