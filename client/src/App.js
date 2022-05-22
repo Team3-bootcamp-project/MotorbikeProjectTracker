@@ -64,7 +64,7 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/Profile" element={<Profile />} />
         <Route path='/Login' element={<Login />}/>
-        <Route path="/SingleProject" element={<SingleProject />} />
+        <Route path="/SingleProject/:projectId" element={<SingleProject />} />
         <Route path="/Inquiries" element={<Inquiries />} />
         <Route path="/AdminProject" element={<AdminProject />} />
         </Routes>
