@@ -1,6 +1,6 @@
 const db = require('../config/connection');
 const { Customer, Project, Event, User } = require('../models');
-const CustomerSeeds = require('./customerSeeds.json');
+// const CustomerSeeds = require('./customerSeeds.json');
 const projectSeeds = require('./projectSeeds.json');
 
 db.once('open', async () => {
