@@ -50,9 +50,13 @@ export const CREATE_PROJECT = gql`
  //This one is for adding events to the timeline
  //called by admin user when recording the work that was done. Not sure how to do it
 
-// export const CREATE_EVENT = gql`
-//   mutation createEvent($projectId: String!, $title: String!, $description: String!) {
-
-//     }
+export const CREATE_EVENT = gql`
+  mutation createEvent($projectId: String!, $title: String!, $description: String!) {
+    createEvent(title: $title){
+      _id
+      title
+      description
+    }
+    }
   
-// `;
+`;
