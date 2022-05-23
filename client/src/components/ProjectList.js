@@ -17,14 +17,19 @@ const ProjectList = ({
 
   return (
     <div>
+      
       {showTitle && <h3>{title}</h3>}
       {projects &&
-        projects.map((project) => ( <VStack>
+        projects.map((project) => ( 
+     
+        <VStack>{  console.log(project)}
           <Stack p={8} mt={8} spacing={8} direction='row'>
             <Image boxSize='190px' shadow='md' src='picture.png' fallbackSrc='https://via.placeholder.com/150' />
             <Feature
               title= {project.projectName}
               desc= {project.bikeSpecs[0].bikeMake}
+              year= {project.bikeSpecs[0].bikeYear}
+              id = {project._id}
             />
           </Stack>
         
