@@ -5,16 +5,28 @@ const { authMiddleware } = require('./utils/auth');
 
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
-const cors = require('cors')
+
 const PORT = process.env.PORT || 3001;
 const app = express();
+///
+const cors = require('cors')
+const initRoutes = require("./utils/upload/uploadRoutes");
+initRoutes(app);
+let port = 6666;
+app.listen(port, () => {
+  console.log(`Running at localhost:${port}`);
+});
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: authMiddleware,
 });
-app.use(cors())
+var corsOptions = {
+  origin: "http://localhost:8081"
+};
+
+app.use(cors(corsOptions))
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 

@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const homeController = require("../controllers/home");
-const uploadController = require("../controllers/upload");
+const homeController = require("./home");
+const uploadController = require("./upload");
 
 let routes = app => {
   router.get("/", homeController.getHome);

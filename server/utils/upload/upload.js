@@ -1,5 +1,5 @@
-const upload = require("../middleware/upload");
-const dbConfig = require("../config/db");
+const upload = require("./uploadMiddleware");
+const dbConfig = require("../../config/db.js");
 
 const MongoClient = require("mongodb").MongoClient;
 const GridFSBucket = require("mongodb").GridFSBucket;
