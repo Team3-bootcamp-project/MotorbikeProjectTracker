@@ -8,25 +8,27 @@ const db = require('./config/connection');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
+const app2 = express();
 ///
 const cors = require('cors')
 const initRoutes = require("./utils/upload/uploadRoutes");
-initRoutes(app);
+initRoutes(app2);
 let port = 6666;
-app.listen(port, () => {
+app2.listen(port, () => {
   console.log(`Running at localhost:${port}`);
-});
-
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-  context: authMiddleware,
 });
 var corsOptions = {
   origin: "http://localhost:8081"
 };
 
-app.use(cors(corsOptions))
+app2.use(cors(corsOptions))
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context: authMiddleware,
+});
+
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
