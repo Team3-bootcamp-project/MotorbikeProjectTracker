@@ -54,7 +54,7 @@ const Login = (props) => {
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form onSubmit={handleFormSubmit}>
+              <FormControl onSubmit={handleFormSubmit}>
                 <FormLabel>Email</FormLabel>
                 <Input
                   className="form-input"
@@ -80,7 +80,7 @@ const Login = (props) => {
                 >
                   Login
                 </Button>
-              </form>
+              </FormControl>
             )}
 
             {error && (
