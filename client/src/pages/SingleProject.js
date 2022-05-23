@@ -29,7 +29,7 @@ console.log(projectId)
       });
 
       const project = data?.project || {};
-      console.log(project)
+      console.log(project._id)
 
       if (loading) {
         return <div>Loading...</div>;
