@@ -14,14 +14,15 @@ import {
 
 // import { graphql } from 'react-apollo'
 
-
-
-
   
-  function Homepage() {
+const Homepage = () => {
+  const { loading, data } = useQuery(QUERY_PROJECTS);
+  const projects = data?.projects || [];
 
     return (
-        <ProjectList />
+        <ProjectList 
+        projects={projects}
+          />
       
     )
   }
