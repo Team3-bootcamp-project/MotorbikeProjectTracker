@@ -11,7 +11,7 @@ import {Homepage,
         Inquiries,
         Profile,
         SingleProject,
-        Login
+        Login,
         } from './pages';
 
 import {
@@ -21,6 +21,7 @@ ApolloProvider,
 createHttpLink,
 } from '@apollo/client';   
 import { setContext } from '@apollo/client/link/context';
+
 
 //import SingleProject from './SingleProject';
 // import Profile from './Profile';
