@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Heading, HStack, Spacer, Button, ButtonGroup, Flex} from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
+import { FindModal } from "./FindModal";
 import { BrowserRouter as Router, Routes, Switch, Route, Link } from 'react-router-dom';
 import Auth from '../utils/auth';
 
@@ -24,6 +25,8 @@ function Header(){
                                 Homepage
                             </Button>
                         </Link>
+
+                        <FindModal />
 
                         {Auth.loggedIn() ? (
                         <>
