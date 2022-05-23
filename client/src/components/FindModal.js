@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, Route, useParams } from 'react-router-dom';
-import { useQuery } from '@chakra-ui/react';
+import { useQuery } from '@apollo/client';
 
 import {
     Modal,
@@ -30,8 +30,9 @@ import { QUERY_SINGLE_PROJECT } from '../utils/queries';
     variables: { projectId: projectId },
   });
 
-  const project = data?.project || {};
+  const project = data?.project;
     
+
 
     const link = `/SingleProject/${id}`
 
@@ -63,7 +64,7 @@ import { QUERY_SINGLE_PROJECT } from '../utils/queries';
                 </Button>
                 
                 <Link to={link}>
-                  <Button variant='ghost' type='submit' >Search</Button>
+                  <Button variant='ghost' type='submit' onClick={onClose} >Search</Button>
                 </Link>
                 
                 </ModalFooter>

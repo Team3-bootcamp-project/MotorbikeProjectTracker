@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
 import { QUERY_SINGLE_PROJECT } from '../utils/queries';
-
+import ErrorPage from './ErrorPage';
 
 function Feature({ title, desc, make, year, notes, ...rest }) {
     return (
@@ -22,25 +22,26 @@ function Feature({ title, desc, make, year, notes, ...rest }) {
 
 const  SingleProject = () => {
     const { projectId } = useParams();
-console.log(projectId)
     const { loading, data } = useQuery(QUERY_SINGLE_PROJECT, {
         // pass URL parameter
         variables: { projectId: projectId },
-      });
+    });
 
-      const project = data?.project || {};
-      console.log(project._id)
-
-      if (loading) {
+    const project = data?.project;
+    
+    if (loading) {
         return <div>Loading...</div>;
-      }
+    }
+    
+    if (!project) {
+        return (<ErrorPage />)
+    }
 
-      const Make = `Make: ${project.bikeSpecs[0].bikeMake}`
-      const Year = `Year: ${project.bikeSpecs[0].bikeYear}`
- 
+    const Make = `Make: ${project.bikeSpecs[0].bikeMake}`
+    const Year = `Year: ${project.bikeSpecs[0].bikeYear}`
+
     
     return(
-
         <VStack w='100%'>
             <Center mt={8} mb={8} h='100px'>
                 <Heading>{project.projectName}</Heading>
@@ -50,7 +51,7 @@ console.log(projectId)
                 <WrapItem>
                     <Center align='center'>
                         <Image boxSize='200px' m={8}  shadow='md' src='picture.png' fallbackSrc='https://via.placeholder.com/150' />
-                     </Center>
+                    </Center>
                 </WrapItem>
 
                 <WrapItem>
@@ -58,11 +59,11 @@ console.log(projectId)
                         <Image boxSize='200px' m={8} shadow='md' src='picture.png' fallbackSrc='https://via.placeholder.com/150' />
                     </Center>
                 </WrapItem>
-  
-</Wrap>
+
+            </Wrap>
 
             <Stack p={8} spacing={8} direction='row'>
-                 <Feature
+                <Feature
                     title='Bike Details'
                     make={Make}
                     year={Year}
@@ -74,7 +75,7 @@ console.log(projectId)
 
         </VStack>
     )
-
+    
 }
 
 export default SingleProject
