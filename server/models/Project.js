@@ -3,6 +3,21 @@ const dateFormat = require('../utils/dateFormat');
 // const { customerSchema } = require('./Customer');
 
 
+const photoSchema = new Schema({
+  
+  name:{
+    type: String},
+
+  desc:{
+    type: String},
+
+  img: {
+    data: Buffer,
+    contentType: String
+  }
+}
+)
+
 const eventSchema = new Schema({
   date : {
       type: Date,
@@ -13,9 +28,7 @@ const eventSchema = new Schema({
   title: {
       type: String
   },
-  eventPhotos: {
-    type: String
-  }
+  eventPhotos: [photoSchema]
 })
 
 
@@ -88,16 +101,7 @@ const projectSchema = new Schema({
   },
   timeline: [eventSchema],
   
-  photos: [
-    {
-      name: String,
-      desc: String,
-      img: {
-        data: Buffer,
-        contentType: String
-      }
-  }
-  ]
+  photos: [photoSchema]
 });
 
 
