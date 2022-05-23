@@ -13,29 +13,11 @@ const resolvers = {
       return Project.findOne({_id: projectId})
     },
 
-
-    //Finds all customers. not implemented
-    // customers: async () => {
-    //   return Client.find()
-    //     .select("-__v -password")
-    //     .populate("projects")
-    // },
-
-    //Finds all clients
-    // customers: async () => {
-    //   return Customer.find()
-    //     .select("-__v -password")
-    //     .populate("projects")
-    // },
-
-    
     // finds multiple projects and sorts by start date
     projects: async () => {
       return Project.find().sort({startedAt: -1})
     },
 
-    //Finds logged in user's projects
-    //broken
   },
 
   Mutation: {
@@ -45,7 +27,7 @@ const resolvers = {
       return { token, user };
     },
 
-    //this one also generates tokens, so it essentially works. I dont really understand JWT that well.
+
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
@@ -77,7 +59,7 @@ const resolvers = {
       if (context.Project) {
         const newProjectName = args.ProjectName
         const updatedProject = await Project.findByIdAndUpdate(
-          {_id: context.customer._id},
+          {_id: context.project._id},
           {$push: {projects: ProjectData}},
           {new: true}
         )
