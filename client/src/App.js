@@ -12,6 +12,7 @@ import {Homepage,
         Profile,
         SingleProject,
         Login,
+        ErrorPage
         } from './pages';
 
 import {
@@ -66,6 +67,8 @@ function App() {
         <Route path="/Profile" element={<Profile />} />
         <Route path='/Login' element={<Login />}/>
         <Route path="/SingleProject/:projectId" element={<SingleProject />} />
+        <Route path='/SingleProject/undefined' element={<ErrorPage />} />
+        <Route path='*' element={<ErrorPage />}/>
         <Route path="/Inquiries" element={<Inquiries />} />
         <Route path="/AdminProject" element={<AdminProject />} />
         </Routes>
