@@ -109,5 +109,6 @@ const Event = model('Event', eventSchema );
 
 const Project = model('Project', projectSchema);
 
+const Photo = model('Photo', photoSchema);
 
 module.exports = Project, Event ;
