@@ -29,7 +29,7 @@ console.log(projectId)
       });
 
       const project = data?.project || {};
-      console.log(project)
+      console.log(project._id)
 
       if (loading) {
         return <div>Loading...</div>;
@@ -37,7 +37,7 @@ console.log(projectId)
 
       const Make = `Make: ${project.bikeSpecs[0].bikeMake}`
       const Year = `Year: ${project.bikeSpecs[0].bikeYear}`
-      
+ 
     
     return(
 
@@ -66,7 +66,7 @@ console.log(projectId)
                     title='Bike Details'
                     make={Make}
                     year={Year}
-                    notes='Notes:'
+                    id= 'ss'
                     desc='The future can be even brighter but a goal without a plan is just a wish'
                     spacing = {15}
                 />
