@@ -13,7 +13,7 @@ const typeDefs = gql`
     projectName: String
     associatedCustomer: String
     startedAt: String
-    bikeSpecs: [BikeSpecs] 
+    bikeSpecs: [BikeSpecs]
     estimatedCost: Float
     workToBeDone: [workToBeDone]
     timeline: [Event]
@@ -25,6 +25,7 @@ const typeDefs = gql`
     bikeModel: String
   }
 
+
   type workToBeDone {
     cosmetic: String
     engineWork: String
@@ -32,6 +33,7 @@ const typeDefs = gql`
     electric: String
     suspension: String
   }
+
   type Event {
     title: String
     description: String

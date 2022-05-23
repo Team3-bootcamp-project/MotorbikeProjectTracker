@@ -39,14 +39,18 @@ const projectSchema = new Schema({
     {
       bikeYear: {
         type: Number,
-        required: true,
+        // required: true,
         minlength: 1,
         maxlength: 280,
       },
+    },
+    {
       bikeMake: {
         type: String,
         required: true,
       },
+    },
+    {
       bikeModel: {
         type: String,
         required: true,
@@ -84,10 +88,16 @@ const projectSchema = new Schema({
   },
   timeline: [eventSchema],
   
-  photos: {
-    type: String
+  photos: [
+    {
+      name: String,
+      desc: String,
+      img: {
+        data: Buffer,
+        contentType: String
+      }
   }
-
+  ]
 });
 
 

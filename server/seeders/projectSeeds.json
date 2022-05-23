@@ -3,19 +3,18 @@
       "projectName": "1098 Cafe",
       "associatedCustomer": "Max Power",
       "bikeSpecs": [
-          {
-              "bikeYear": 2009,
-              "bikeMake": "Ducati",
-              "bikeModel": "1098S"
-          }
+              {"bikeYear": 2009},
+              {"bikeMake": "Ducati"},
+              {"bikeModel": "1098S"}
+          
       ],
       "workToBeDone": [
-          {
-              "cosmetic": "paint"
-          }
+          {"cosmetic": "paint"}
       ],
       "estimatedCost": 500,
       "timeline": []
+
+
 
 
     },
@@ -24,78 +23,102 @@
     "projectName": "900SS Track bike",
     "associatedCustomer": "Vladimir Putin",
     "bikeSpecs": [
-        {
-            "bikeYear": 1999,
-            "bikeMake": "Ducati",
-            "bikeModel": "900SS"
-        }
+        {   "bikeYear": 1999},
+        {   "bikeMake": "Ducati"},
+        {    "bikeModel": "900SS"}
+        
     ],
     "workToBeDone": [
-        {
-            "cosmetic": "paint",
-            "engineWork": "FCR carbs",
-            "electric": "R/R upgrade",
-            "suspension": "ohlins front end"
+        {"cosmetic": "paint"},
+        {"engineWork": "FCR carbs"},
+        {"electric": "R/R upgrade"},
+        {"suspension": "ohlins front end"}
             
-        }
+        
     ],
-    "estimatedCost": 2000
+    "estimatedCost": 2000,
+    "timeline": []
 
 },
 {
-    "projectName": "Something Bike",
-    "associatedCustomer":"Vladimir Putin",
+    "projectName": "1098 Cafe",
+    "associatedCustomer": "Max Power",
     "bikeSpecs": [
-        {
-            "bikeYear": 2009,
-            "bikeMake": "Ducati",
-            "bikeModel": "1098S"
-        }
+            {"bikeYear": 2009},
+            {"bikeMake": "Ducati"},
+            {"bikeModel": "1098S"}
+        
     ],
     "workToBeDone": [
-        {
-            "cosmetic": "paint"
-        }
+        {"cosmetic": "paint"}
     ],
-    "estimatedCost": 500
+    "estimatedCost": 500,
+    "timeline": []
+
+
 
   },
+  
   {
-    "projectName": "Bike Name",
-    "associatedCustomer": "Barrack Obama",
+  "projectName": "900SS Track bike",
+  "associatedCustomer": "Vladimir Putin",
+  "bikeSpecs": [
+      {   "bikeYear": 1999},
+      {   "bikeMake": "Ducati"},
+      {    "bikeModel": "900SS"}
+      
+  ],
+  "workToBeDone": [
+      {"cosmetic": "paint"},
+      {"engineWork": "FCR carbs"},
+      {"electric": "R/R upgrade"},
+      {"suspension": "ohlins front end"}
+          
+      
+  ],
+  "estimatedCost": 2000,
+  "timeline": []
+
+},
+{
+    "projectName": "1098 Cafe",
+    "associatedCustomer": "Max Power",
     "bikeSpecs": [
-        {
-            "bikeYear": 2009,
-            "bikeMake": "Ducati",
-            "bikeModel": "1098S"
-        }
+            {"bikeYear": 2009},
+            {"bikeMake": "Ducati"},
+            {"bikeModel": "1098S"}
+        
     ],
     "workToBeDone": [
-        {
-            "cosmetic": "paint"
-        }
+        {"cosmetic": "paint"}
     ],
-    "estimatedCost": 500
+    "estimatedCost": 500,
+    "timeline": []
+
+
 
   },
+  
   {
-    "projectName": "Gt1000",
-    "associatedCustomer": "Sponge Bob",
-    "bikeSpecs": [
-        {
-            "bikeYear": 2009,
-            "bikeMake": "Ducati",
-            "bikeModel": "1098S"
-        }
-    ],
-    "workToBeDone": [
-        {
-            "cosmetic": "paint"
-        }
-    ],
-    "estimatedCost": 500
+  "projectName": "900SS Track bike",
+  "associatedCustomer": "Vladimir Putin",
+  "bikeSpecs": [
+      {   "bikeYear": 1999},
+      {   "bikeMake": "Ducati"},
+      {    "bikeModel": "900SS"}
+      
+  ],
+  "workToBeDone": [
+      {"cosmetic": "paint"},
+      {"engineWork": "FCR carbs"},
+      {"electric": "R/R upgrade"},
+      {"suspension": "ohlins front end"}
+          
+      
+  ],
+  "estimatedCost": 2000,
+  "timeline": []
 
-  }
-    
+}
 
 ]
