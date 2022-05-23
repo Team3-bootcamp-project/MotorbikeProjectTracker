@@ -57,6 +57,23 @@ const typeDefs = gql`
     updateProject(projectName: String!): Project
     createEvent(title: String!, description: String!, projectId: String!, Date: String): Project
   }
+
+  type File {
+  _id: ID!
+  path: String!
+  filename: String!
+  mimetype: String!
+  encoding: String!
+},
+
+  type Query {
+    uploads: [File]
+  },
+
+  type Mutation {
+    singleUpload(file: Upload!): File!
+  }
 `;
+
 
 module.exports = typeDefs;

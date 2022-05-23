@@ -1,7 +1,21 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
-// const { customerSchema } = require('./Customer');
+// const { photoSchema } = require('./Photo');
 
+const photoSchema = new Schema({
+  
+  name:{
+    type: String},
+
+  desc:{
+    type: String},
+
+  img: {
+    data: Buffer,
+    contentType: String
+  }
+}
+)
 
 const eventSchema = new Schema({
   date : {
@@ -13,9 +27,14 @@ const eventSchema = new Schema({
   title: {
       type: String
   },
-  eventPhotos: {
-    type: String
-  }
+
+  eventPhotos: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Photo',
+  },
+]
+  
+  
 })
 
 
@@ -39,14 +58,18 @@ const projectSchema = new Schema({
     {
       bikeYear: {
         type: Number,
-        required: true,
+        // required: true,
         minlength: 1,
         maxlength: 280,
       },
+    },
+    {
       bikeMake: {
         type: String,
         required: true,
       },
+    },
+    {
       bikeModel: {
         type: String,
         required: true,
@@ -84,10 +107,7 @@ const projectSchema = new Schema({
   },
   timeline: [eventSchema],
   
-  photos: {
-    type: String
-  }
-
+  photos: [photoSchema]
 });
 
 
@@ -95,5 +115,6 @@ const Event = model('Event', eventSchema );
 
 const Project = model('Project', projectSchema);
 
+const Photo = model('Photo', photoSchema);
 
 module.exports = Project, Event ;

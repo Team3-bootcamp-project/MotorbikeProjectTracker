@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Image, Heading, Center, Stack, VStack, Text, Wrap, WrapItem, Button, ButtonGroup} from '@chakra-ui/react';
+import { Input, Box, Image, Heading, Center, Stack, VStack, Text, Wrap, WrapItem, Button, ButtonGroup} from '@chakra-ui/react';
 
 function Feature({ title, desc, make, year, notes, ...rest }) {
     return (
@@ -19,6 +19,7 @@ function AdminProject(){
         <VStack w='100%'>
             <Center mt={8} mb={8} h='100px'>
                 <Heading>Project Name</Heading>
+                
             </Center>
 
             <Wrap spacing='30px' align='center'>
@@ -35,7 +36,23 @@ function AdminProject(){
                 </WrapItem>
   
 </Wrap>
-
+<form
+            class="mt-4"
+            action="/upload"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <div class="form-group">
+              <input
+                type="file"
+                name="file"
+                multiple
+                id="input-files"
+                class="form-control-file border"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
             <Stack p={8} spacing={8} direction='row' m>
                  <Feature
                     title='Bike Details'
@@ -58,7 +75,7 @@ function AdminProject(){
                     </Button>
                     
             </ButtonGroup>
-           
+      
             
 
         </VStack>

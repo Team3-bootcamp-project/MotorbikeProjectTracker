@@ -1,15 +1,13 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { Project, Event, User } = require('../models');
 const { signToken } = require('../utils/auth');
+const { ApolloServer, gql } = require('apollo-server-express')
 
 const resolvers = {
-  Query: {
-    // need to add "admin" and "client" stuff
-    //Admin would have access to all of the create routes
-    //Not sure how to implement it
-    //im guessing adding an IF statement to the routes
-    //IF client id =! 'predeterminedID' then throw an error
+  Upload: GraphQLUpload,
 
+  Query: {
+ 
     // Finds a single Project by ID
     project: async ( parent, { projectId }) => {
       return Project.findOne({_id: projectId})
@@ -103,3 +101,4 @@ const resolvers = {
 };
 
 module.exports = resolvers;
+// module.exports = GraphQLUpload;
