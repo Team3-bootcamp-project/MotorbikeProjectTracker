@@ -11,7 +11,8 @@ import {Homepage,
         Inquiries,
         Profile,
         SingleProject,
-        Login
+        Login,
+        Timeline
         } from './pages';
 
 import {
@@ -67,7 +68,8 @@ function App() {
         <Route path="/SingleProject/:projectId" element={<SingleProject />} />
         <Route path="/Inquiries" element={<Inquiries />} />
         <Route path="/AdminProject" element={<AdminProject />} />
-        </Routes>
+        <Route path="/SingleProject/:projectId/timeline" element={<Timeline />} />
+      </Routes>
       </Flex>
 
     
