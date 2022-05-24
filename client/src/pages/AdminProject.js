@@ -33,7 +33,7 @@ function AdminProject(){
                     projectId: formState.projectId,
                     estimatedCost: parseInt(formState.estimatedCost)
                 },
-            });
+            }); 
             console.log('data', data)
 
             // setFormState({
