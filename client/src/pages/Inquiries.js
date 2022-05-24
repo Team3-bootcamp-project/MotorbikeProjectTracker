@@ -10,24 +10,32 @@ function Inquiries(){
   const isError = input === ''
 
     return(
-        <VStack>
+        <VStack w='100%'>
             
-            <Box p={5}>
+            <Box m={5}>
                 <Heading fontSize='50px'>Contact Us</Heading>
             </Box>
-          
-            <FormControl isRequired align='center'>
-                <FormLabel htmlFor='first-name'>Name</FormLabel>
-                <Input id='first-name' placeholder='Name' />
-            </FormControl>
 
-            <FormControl isInvalid={isError}>
-      <FormLabel htmlFor='email'>Email</FormLabel>
+            
+          <Box align='center' w='75%' bg='#652226' borderColor='black' border='4px' m={10}>
+            <FormControl isRequired p={10}>
+                <FormLabel htmlFor='first-name' mb={5} fontSize='20px' fontWeight='bold' color='white'>Name</FormLabel>
+                <Input id='first-name' placeholder='Name'  borderColor='white' color='white'/>
+            </FormControl>
+            
+          
+            <FormControl isRequired={isError} p={10}>
+      <FormLabel htmlFor='email' mb={5} fontSize='20px' fontWeight='bold' color='white'>Email</FormLabel>
       <Input
         id='email'
         type='email'
+        placeholder='Email@email.com'
+        borderColor='white'
+        color='white'
         value={input}
         onChange={handleInputChange}
+
+        
       />
       {!isError ? (
         <FormHelperText>
@@ -37,6 +45,7 @@ function Inquiries(){
         <FormErrorMessage>Email is required.</FormErrorMessage>
       )}
     </FormControl>
+    </Box>
         </VStack>
     )
 }

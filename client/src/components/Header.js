@@ -11,14 +11,14 @@ function Header(){
         Auth.logout();
       };
     return(
-        <Box bg='none' shadow='md' w='100%' p={4} >
+        <Box shadow='md' w='100%' p={4} bgGradient='linear(to-r, black.000, red.500, yellow.300)' color='white'>
             <HStack>
                 <Flex w="100%">
                     <Heading>Bike Project Tracker</Heading>
 
                     <Spacer></Spacer>
                     
-                    <ButtonGroup gap='.03' variant='ghost' size='sm' mt={2}>
+                    <ButtonGroup gap='.03' variant='ghost' size='sm' mt={2} _hover={{ color:'black' }}>
                     
                         <Link to='/'>
                             <Button>
@@ -30,16 +30,17 @@ function Header(){
 
                         {Auth.loggedIn() ? (
                         <>
-
                         <Link to='/AdminProject'>
                             <Button>
-                            PROJECT MANAGEMENT
+                            Project Management
                             </Button>
                         </Link>
-
+                            {/* wrapped logout button in link tags to make it space out evenly in the header */}
+                            <Link to='/'> 
                             <Button className="btn btn-lg btn-light m-2" onClick={logout}>
                             Logout
                             </Button>
+                            </Link>
 
                             </>
                            ) :(

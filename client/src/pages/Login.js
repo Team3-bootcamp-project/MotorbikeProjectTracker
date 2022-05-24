@@ -43,11 +43,13 @@ const Login = (props) => {
 
   return (
     
-    <main className="">
-
-      <Box p={5}>
+    //<main className="" >
+      <VStack  w='100%'>
+      <Box m={5}>
         <Heading fontSize='50px'>Admin Login</Heading>
       </Box>
+
+      <Box align='center' w='75%' bg='#652226' borderColor='black' border='4px' m={10} p={20} color='white'> 
             {data ? (
               <p>
                 Success! You may now head{' '}
@@ -55,41 +57,50 @@ const Login = (props) => {
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
-                <FormLabel>Email</FormLabel>
+                <FormLabel  mb={5} fontSize='20px' fontWeight='bold' color='white'>Email</FormLabel>
                 <Input
                   className="form-input"
                   placeholder="Your email"
                   name="email"
                   type="email"
+                  borderColor='white'
+                  color='white'
                   value={formState.email}
                   onChange={handleChange}
                 />
-                <FormLabel>Password</FormLabel>
+
+                
+                <FormLabel  mt={20} mb={5} fontSize='20px' fontWeight='bold' color='white'>Password</FormLabel>
                 <Input
                   className="form-input"
                   placeholder="********"
                   name="password"
                   type="password"
+                  borderColor='white'
+                  color='white'
                   value={formState.password}
                   onChange={handleChange}
                 />
+              
                 <Button
                   className="btn btn-block btn-primary"
                   style={{ cursor: 'pointer' }}
                   type="submit"
+                  mt={10}
                 >
                   Login
                 </Button>
               </form>
             )}
+            </Box>
 
             {error && (
               <div className="my-3 p-3 bg-danger text-white">
                 {error.message}
               </div>
             )}
-         
-    </main>
+         </VStack>
+    // </main>
   );
 };
 
