@@ -66,6 +66,10 @@ export const QUERY_SINGLE_PROJECT = gql`
         electric
         suspension
       }
+      photos {
+      link
+      linkb
+    }
     }
   }
 `;

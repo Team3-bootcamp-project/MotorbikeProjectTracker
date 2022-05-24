@@ -50,13 +50,13 @@ const  SingleProject = () => {
             <Wrap spacing='30px' align='center'>
                 <WrapItem>
                     <Center align='center'>
-                        <Image boxSize='300px' m={8}  shadow='md' borderStyle='solid' borderColor='black' border='4px' src='https://cdn.visordown.com/12651_0.jpg' fallbackSrc='https://via.placeholder.com/150' />
+                        <Image boxSize='300px' m={8}  shadow='md' borderStyle='solid' borderColor='black' border='4px' src={`${project.photos[0].link}`} fallbackSrc='https://via.placeholder.com/150' />
                     </Center>
                 </WrapItem>
 
                 <WrapItem>
                     <Center >
-                        <Image boxSize='300px' m={8} shadow='md' borderStyle='solid' borderColor='black' border='4px' src='https://www.motorcyclespecs.co.za/Gallery%20B/Ducati%20GT1000%2006%20%201.jpg' fallbackSrc='https://via.placeholder.com/150' />
+                        <Image boxSize='300px' m={8} shadow='md' borderStyle='solid' borderColor='black' border='4px' src={`${project.photos[0].linkb}`} fallbackSrc='https://via.placeholder.com/150' />
                     </Center>
                 </WrapItem>
 
