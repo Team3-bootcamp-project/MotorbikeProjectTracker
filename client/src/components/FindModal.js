@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, Route, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
 import {

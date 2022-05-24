@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Box, Image, Heading, Center, Stack, VStack, Text, Wrap, WrapItem, Button, ButtonGroup, Input} from '@chakra-ui/react';
+import { Box, Heading, Center, Stack, VStack, Text, Button, ButtonGroup, Input} from '@chakra-ui/react';
 import { useMutation } from "@apollo/client";
 import {UPDATE_PROJECT} from "../utils/mutations"
 function Feature({ title, desc, make, year, notes, ...rest }) {
@@ -28,15 +28,15 @@ function AdminProject(){
         event.preventDefault();
     
         try {
-            console.log('formState', formState)
+            
             const { data } = await updateProject({
                 variables: {
                     projectId: formState.projectId,
                     projectName: formState.projectName,
                     estimatedCost: parseInt(formState.estimatedCost)
                 },
-            }); 
-            console.log('data', data)
+            });
+            
 
             // setFormState({
             //     projectId: '',
@@ -47,8 +47,6 @@ function AdminProject(){
             
         } catch (err) {
             console.error(err);
-            console.log(data)
-            console.log('formState', formState)
         }
     };
         

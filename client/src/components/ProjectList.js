@@ -1,8 +1,6 @@
 import React from "react";
-import { Box, Heading, Image, Stack, VStack, Text, Center} from '@chakra-ui/react';
-import { HStack, Spacer, Button, ButtonGroup, Flex} from '@chakra-ui/react';
-import { BrowserRouter as Router, Routes, Switch, Route, Link } from 'react-router-dom';
-import Auth from '../utils/auth';
+import { Image, Stack, VStack } from '@chakra-ui/react';
+
 import Feature from './Feature'
 
 const ProjectList = ({
@@ -23,7 +21,7 @@ const ProjectList = ({
         projects.map((project) => ( 
           
         <VStack>
-        {console.log(project.photos[0].link)}
+        
           <Stack p={8} mt={10} spacing={30} direction='row' bg='#652226' borderStyle='solid' border='4px' borderColor='black'>
             <Image boxSize='300px' shadow='md' src={`${project.photos[0].link}`} fallbackSrc='https://via.placeholder.com/150' />
             <Feature

@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Box, Flex,  Heading, VStack, Center, FormControl, FormLabel, Input, FormHelperText, FormErrorMessage} from '@chakra-ui/react';
+import { Box, Heading, VStack, FormControl, FormLabel, Input, FormHelperText, FormErrorMessage} from '@chakra-ui/react';
 
 
 function Inquiries(){
@@ -20,7 +20,7 @@ function Inquiries(){
           <Box align='center' w='75%' bg='#652226' borderColor='black' border='4px' m={10}>
             <FormControl isRequired p={10}>
                 <FormLabel htmlFor='first-name' mb={5} fontSize='20px' fontWeight='bold' color='white'>Name</FormLabel>
-                <Input id='first-name' placeholder='Name'  borderColor='white' color='white'/>
+                <Input id='first-name' placeholder='Name'  borderColor='white' color='white' onChange={handleInputChange}/>
             </FormControl>
             
           

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
-import { Box, Flex, Button, Heading, VStack, Center, FormControl, FormLabel, Input, FormHelperText, FormErrorMessage} from '@chakra-ui/react';
+import { Box, Button, Heading, VStack ,FormLabel, Input } from '@chakra-ui/react';
 
 import Auth from '../utils/auth';
 
@@ -23,7 +23,6 @@ const Login = (props) => {
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
     try {
       const { data } = await login({
         variables: { ...formState },

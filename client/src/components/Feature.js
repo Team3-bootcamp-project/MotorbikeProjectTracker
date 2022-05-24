@@ -1,4 +1,4 @@
-import { Box, Heading, Image, Stack, VStack, Text} from '@chakra-ui/react';
+import { Box, Heading, Text} from '@chakra-ui/react';
 import { Link } from 'react-router-dom'
 function Feature({ title, make, year, model, id, work, ...rest }) {
     return (
