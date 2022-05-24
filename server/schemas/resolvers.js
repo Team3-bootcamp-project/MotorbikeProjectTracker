@@ -73,13 +73,13 @@ const resolvers = {
       return project
     },
 
-    updateProject: async (parent, {projectId, estimatedCost}, context) => {
+    updateProject: async (parent, {projectId, projectName, estimatedCost}, context) => {
       //Update project
       //not working yet
         const cost = estimatedCost
         let updatedProject = await Project.findOneAndUpdate(
           {_id: projectId},
-          {$set: {estimatedCost: cost}},
+          {$set: {estimatedCost: cost, projectName: projectName}},
           {new: true}
         )
       
