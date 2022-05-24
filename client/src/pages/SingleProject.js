@@ -12,13 +12,13 @@ function Feature({ title, desc, make, year, model, w1, w2, w3, w4, w5, ...rest }
     <Box>
       <Box p={3} shadow='md' borderWidth='1px' {...rest}>
         <Heading fontSize='xl'>{title}</Heading>
-        <Text mt={8}>{make}</Text>
-        <Text mt={8}>{year}</Text>
-        <Text mt={8}>{model}</Text>
+        <Text mt={4}>{make}</Text>
+        <Text mt={4}>{year}</Text>
+        <Text mt={4}>{model}</Text>
         <Text mt={4}>{desc}</Text>
       </Box>
       <Box p={3} shadow='md' borderWidth='1px' {...rest}>
-      <Heading fontSize='lg'>Work Done</Heading>
+      <Heading mb={4}fontSize='lg'>Work Done</Heading>
         <Text>Cosmetic:</Text>
         <Text mb={3} >{w1}</Text>
         <Text >Engine/Power:</Text>
