@@ -54,8 +54,8 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     ## All these need to be modified, not sure what args they need
     createProject(projectName: String!, estimatedCost: Float!): Project
-    updateProject(projectName: String!): Project
-    createEvent(title: String!, description: String!, projectId: String!, Date: String): Project
+    updateProject(projectId: ID!, estimatedCost: Float): Project
+    createEvent(title: String!, description: String!, projectId: ID!, Date: String): Project
   }
 `;
 
