@@ -27,34 +27,57 @@
             ]
     },
     
-    {
+{
     "projectName": "Monster900 Streetbike",
     "associatedCustomer": "Customer 2",
     "bikeSpecs": [
         {
-            "bikeYear": 1996,
-            "bikeMake": "Ducati",
-            "bikeModel": "M900"
+        "bikeYear": 1996,
+        "bikeMake": "Ducati",
+        "bikeModel": "M900"
+        
         }
     ],
     "workToBeDone": [
         {
-            "cosmetic": "paint",
-            "engineWork": "FCR carbs",
-            "electric": "R/R upgrade",
-            "brakes": "4 piston calipers, radial m/c, cast-iron rotors",
-            "suspension": "ohlins front end"
-            
+        "cosmetic": "paint",
+        "engineWork": "FCR carbs",
+        "brakes": "4 piston calipers, radial m/c, cast-iron rotors",
+        "electric": "R/R upgrade",
+        "suspension": "ohlins front end"
+        
         }
     ],
-    "estimatedCost": 2000,
+    "estimatedCost": 66666,
     "photos": [
-        {"link":"https://i.imgur.com/5NVVNtJ.jpg",
+        {
+        "link": "https://i.imgur.com/5NVVNtJ.jpg",
+        "linkb": "https://i.imgur.com/lR3j5at.jpg"
+        
+        }
+    ],
 
-        "linkb":"https://i.imgur.com/lR3j5at.jpg"}
+    "timeline": [
+        {
+        
+        "description": "Added new piston rings, checked valve clearances",
+        "title": "Top End Rebuild"
+        
+        },
+        {
+        
+        "description": "Synced and tuned the carburetors.",
+        "title": "Carb Tuning"
+        
+        },
+        {
+        
+        "description": "Regulator/Rectifier is fried, charging system might need to be reworked",
+        "title": "R/R is bad"
+        
+        }
     ]
-
-},
+    },
 {
     "projectName": "Sport1000 PS Custom",
     "associatedCustomer":"Customer3",
