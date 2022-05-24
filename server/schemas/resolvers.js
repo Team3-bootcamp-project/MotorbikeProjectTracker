@@ -73,20 +73,18 @@ const resolvers = {
       return project
     },
 
-    updateProject: async (parent, args, context) => {
+    updateProject: async (parent, {projectId, estimatedCost}, context) => {
       //Update project
       //not working yet
-      if (context.Project) {
-        const newProjectName = args.ProjectName
-        const updatedProject = await Project.findByIdAndUpdate(
-          {_id: context.customer._id},
-          {$push: {projects: ProjectData}},
+        const cost = estimatedCost
+        let updatedProject = await Project.findOneAndUpdate(
+          {_id: projectId},
+          {$set: {estimatedCost: cost}},
           {new: true}
         )
-        return updatedProject;
-      }
-      throw new AuthenticationError('Error')
-    },
+      
+        return updatedProject
+     },
 
     createEvent: async (parent, { title, description, projectId, date}, context) => {
       //create timeline event
