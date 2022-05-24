@@ -117,11 +117,6 @@ function AdminProject(){
                         <Button shadow='md' bg='#652226' color='white' _hover={{ bgColor:'black' }}>
                             Preview Timeline
                         </Button>
-                        
-                        <Button shadow='md' bg='#652226' color='white' _hover={{ bgColor:'black' }}>
-                            Messege Mechanic
-                        </Button>
-                        
                 </ButtonGroup>
             </form>
            
