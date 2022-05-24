@@ -28,9 +28,10 @@ const ProjectList = ({
             <Image boxSize='300px' shadow='md' src={`${project.photos[0].link}`} fallbackSrc='https://via.placeholder.com/150' />
             <Feature
               title= {project.projectName}
-              desc= {project.bikeSpecs[0].bikeMake}
+              make= {project.bikeSpecs[0].bikeMake}
               year= {project.bikeSpecs[0].bikeYear}
               id = {project._id}
+              model = {project.bikeSpecs[0].bikeModel}
               color='white'
               boxSize='300px'
             />
