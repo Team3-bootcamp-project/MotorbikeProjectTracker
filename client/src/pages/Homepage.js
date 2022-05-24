@@ -1,12 +1,6 @@
 import React from "react";
-import { Box, Heading, Image, Stack, VStack, Text, Flex } from '@chakra-ui/react';
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  useQuery,
-  gql
-} from "@apollo/client";
+import { Heading, VStack, Text, Flex } from '@chakra-ui/react';
+import { useQuery } from "@apollo/client";
 import ProjectList from "../components/ProjectList";
 import {
   QUERY_PROJECTS

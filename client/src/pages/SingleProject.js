@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Image, Heading, Center, Stack, VStack, Text, Wrap, WrapItem} from '@chakra-ui/react';
-import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 

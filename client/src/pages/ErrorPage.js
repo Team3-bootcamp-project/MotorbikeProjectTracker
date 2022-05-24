@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Box, Flex,  Heading, VStack, Center, FormControl, FormLabel, Input, FormHelperText, FormErrorMessage} from '@chakra-ui/react';
+import { Box, Heading,} from '@chakra-ui/react';
 
 function ErrorPage() {
     return(

@@ -1,9 +1,9 @@
 import React from "react";
-import { Box, Heading, HStack, Stack, Spacer, Button, ButtonGroup, Flex, MenuButton, IconButton} from '@chakra-ui/react';
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import { Box, Heading, HStack, Spacer, Button, ButtonGroup, Flex, IconButton} from '@chakra-ui/react';
+import { HamburgerIcon } from '@chakra-ui/icons';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { FindModal } from "./FindModal";
-import { BrowserRouter as Router, Routes, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Link } from 'react-router-dom';
 import Auth from '../utils/auth';
 
 function Header(){
