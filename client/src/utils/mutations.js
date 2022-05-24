@@ -62,10 +62,12 @@ export const CREATE_EVENT = gql`
 `;
 
 export const UPDATE_PROJECT = gql`
-mutation updateProject($projectId: ID!, $estimatedCost: Float) {
-  updateProject(projectId: $projectId, estimatedCost: $estimatedCost) {
+mutation updateProject($projectId: ID!, $estimatedCost: Float, $projectName: String) {
+  updateProject(projectId: $projectId, estimatedCost: $estimatedCost, projectName: $projectName) {
     _id
+    projectName
     estimatedCost
+
   }
 }
 `;
