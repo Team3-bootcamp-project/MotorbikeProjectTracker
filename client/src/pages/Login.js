@@ -85,6 +85,7 @@ const Login = (props) => {
                 <Button
                   className="btn btn-block btn-primary"
                   style={{ cursor: 'pointer' }}
+                  color='black'
                   type="submit"
                   mt={10}
                 >
