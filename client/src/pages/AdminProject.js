@@ -31,7 +31,7 @@ function AdminProject(){
             const { data } = await updateProject({
                 variables: {
                     projectId: formState.projectId,
-                    estimatedCost: formState.estimatedCost
+                    estimatedCost: parseInt(formState.estimatedCost)
                 },
             });
             console.log('data', data)
