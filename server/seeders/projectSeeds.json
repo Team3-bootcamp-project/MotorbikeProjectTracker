@@ -1,33 +1,40 @@
 [
     {
-      "projectName": "1098 Cafe",
-      "associatedCustomer": "Max Power",
+      "projectName": "GT1000",
+      "associatedCustomer": "Customer 1",
       "bikeSpecs": [
           {
-              "bikeYear": 2009,
+              "bikeYear": 2006,
               "bikeMake": "Ducati",
-              "bikeModel": "1098S"
+              "bikeModel": "GT1000"
           }
       ],
       "workToBeDone": [
           {
-              "cosmetic": "paint"
+              "cosmetic": "Tank paint, rearset powdercoat, Alpina wheels, billet triple tree",
+              "engineWork": "ECU flash, full exhaust",
+              "electric": "LED headlight & signals",
+              "brakes": "4 Piston Calipers from 1098 & full floating rotors",
+              "suspension": "Ohlin's shocks and 1098 Ohlin's fork legs"
           }
       ],
-      "estimatedCost": 500,
-      "timeline": []
+      "estimatedCost": 3000,
+      "timeline": [],
+      "photos": [
+          {"link":"https://i.imgur.com/4Pdf53S.jpg",
 
-
+         "linkb":"https://i.imgur.com/IUlYV5m.jpg"}
+            ]
     },
     
     {
-    "projectName": "900SS Track bike",
-    "associatedCustomer": "Vladimir Putin",
+    "projectName": "Monster900 Streetbike",
+    "associatedCustomer": "Customer 2",
     "bikeSpecs": [
         {
-            "bikeYear": 1999,
+            "bikeYear": 1996,
             "bikeMake": "Ducati",
-            "bikeModel": "900SS"
+            "bikeModel": "M900"
         }
     ],
     "workToBeDone": [
@@ -35,67 +42,43 @@
             "cosmetic": "paint",
             "engineWork": "FCR carbs",
             "electric": "R/R upgrade",
+            "brakes": "4 piston calipers, radial m/c, cast-iron rotors",
             "suspension": "ohlins front end"
             
         }
     ],
-    "estimatedCost": 2000
+    "estimatedCost": 2000,
+    "photos": [
+        {"link":"https://i.imgur.com/5NVVNtJ.jpg",
+
+        "linkb":"https://i.imgur.com/lR3j5at.jpg"}
+    ]
 
 },
 {
-    "projectName": "Something Bike",
-    "associatedCustomer":"Vladimir Putin",
+    "projectName": "Sport1000 PS Custom",
+    "associatedCustomer":"Customer3",
     "bikeSpecs": [
         {
-            "bikeYear": 2009,
+            "bikeYear": 2007,
             "bikeMake": "Ducati",
-            "bikeModel": "1098S"
+            "bikeModel": "Sport1000"
         }
     ],
     "workToBeDone": [
         {
-            "cosmetic": "paint"
-        }
-    ],
-    "estimatedCost": 500
+            "cosmetic": "paint",
+            "brakes": "Discacciati calipers"
 
-  },
-  {
-    "projectName": "Bike Name",
-    "associatedCustomer": "Barrack Obama",
-    "bikeSpecs": [
-        {
-            "bikeYear": 2009,
-            "bikeMake": "Ducati",
-            "bikeModel": "1098S"
         }
     ],
-    "workToBeDone": [
-        {
-            "cosmetic": "paint"
-        }
-    ],
-    "estimatedCost": 500
+    "estimatedCost": 1500,
+    "photos": [
+        {"link":"https://i.imgur.com/agKPvvD.jpg",
 
-  },
-  {
-    "projectName": "Gt1000",
-    "associatedCustomer": "Sponge Bob",
-    "bikeSpecs": [
-        {
-            "bikeYear": 2009,
-            "bikeMake": "Ducati",
-            "bikeModel": "1098S"
-        }
-    ],
-    "workToBeDone": [
-        {
-            "cosmetic": "paint"
-        }
-    ],
-    "estimatedCost": 500
+        "linkb":"https://i.imgur.com/SHvf9yh.jpg"}
+    ]
 
-  }
-    
+  }    
 
 ]

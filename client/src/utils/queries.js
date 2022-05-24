@@ -35,6 +35,10 @@ export const QUERY_PROJECTS = gql`
       description
       date
     }
+    photos {
+      link
+      linkb
+    }
   }
 }
 `;

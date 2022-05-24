@@ -7,7 +7,10 @@ const typeDefs = gql`
     email: String
     password: String
   }
-
+  type photos {
+    link: String
+    linkb: String
+  }
   type Project {
     _id: ID
     projectName: String
@@ -17,6 +20,7 @@ const typeDefs = gql`
     estimatedCost: Float
     workToBeDone: [workToBeDone]
     timeline: [Event]
+    photos: [photos]
   }
 
   type BikeSpecs {
@@ -36,6 +40,7 @@ const typeDefs = gql`
     title: String
     description: String
     date: String
+    eventPhoto: String
   }
 
   type Auth {
@@ -55,7 +60,7 @@ const typeDefs = gql`
     ## All these need to be modified, not sure what args they need
     createProject(projectName: String!, estimatedCost: Float!): Project
     updateProject(projectId: ID!, estimatedCost: Float): Project
-    createEvent(title: String!, description: String!, projectId: ID!, Date: String): Project
+    createEvent(title: String!, description: String!, projectId: ID!, Date: String, eventPhoto: String): Project
   }
 `;
 
