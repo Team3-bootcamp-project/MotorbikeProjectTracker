@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Image, Heading, Center, Stack, VStack, Text, Wrap, WrapItem} from '@chakra-ui/react';
-
+import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
@@ -36,10 +36,18 @@ const  SingleProject = () => {
     if (!project) {
         return (<ErrorPage />)
     }
-
+    const photo1 = project.photos[0].link
+    const projectName = project.projectName
     const Make = `Make: ${project.bikeSpecs[0].bikeMake}`
     const Year = `Year: ${project.bikeSpecs[0].bikeYear}`
-
+    const Model = `Model: ${project.bikeSpecs[0].bikeModel}`
+    const work0 = project.workToBeDone[0].cosmetic
+    const work1 = project.workToBeDone[0].engineWork
+    const work2 = project.workToBeDone[0].electric
+    const work3 = project.workToBeDone[0].brakes
+    const work4 = project.workToBeDone[0].suspension
+ 
+ 
     
     return(
         <VStack w='100%' h='100%'>
@@ -49,26 +57,30 @@ const  SingleProject = () => {
 
             <Wrap spacing='30px' align='center'>
                 <WrapItem>
-                    <Center align='center'>
+                    <Center align='center'><a href={`${project.photos[0].link}`}  target="_blank" rel="noreferrer">
                         <Image boxSize='300px' m={8}  shadow='md' borderStyle='solid' borderColor='black' border='4px' src={`${project.photos[0].link}`} fallbackSrc='https://via.placeholder.com/150' />
+                        </a>
                     </Center>
                 </WrapItem>
 
                 <WrapItem>
-                    <Center >
+                   
+                    <Center ><a href={`${project.photos[0].linkb}`}  target="_blank" rel="noreferrer">
                         <Image boxSize='300px' m={8} shadow='md' borderStyle='solid' borderColor='black' border='4px' src={`${project.photos[0].linkb}`} fallbackSrc='https://via.placeholder.com/150' />
+                        </a>
                     </Center>
+
                 </WrapItem>
 
             </Wrap>
 
             <Stack p={8}  spacing={8} direction='row' bg='#652226' borderColor='black' border='4px'>
                 <Feature
-                    title='Bike Details'
+                    title= {projectName}
                     make={Make}
                     year={Year}
-                    id= 'ss'
-                    desc='The future can be even brighter but a goal without a plan is just a wish'
+                    model={Model}
+                    work= {work0}
                     spacing = {15}
                     color='white'
                 />
