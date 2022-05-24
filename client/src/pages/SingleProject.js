@@ -27,6 +27,8 @@ function Feature({ title, desc, make, year, model, w1, w2, w3, w4, w5, ...rest }
         <Text mb={3}>{w3}</Text>
         <Text>Suspension:</Text>
         <Text mb={3}>{w5}</Text>
+        <Text>Brakes:</Text>
+        <Text mb={3}>{w4}</Text>        
       </Box>
     </Box>
     )
