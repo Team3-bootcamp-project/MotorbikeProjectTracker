@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Heading, Image, Stack, VStack, Text} from '@chakra-ui/react';
+import { Box, Heading, Image, Stack, VStack, Text, Flex } from '@chakra-ui/react';
 import {
   ApolloClient,
   InMemoryCache,
@@ -20,9 +20,23 @@ const Homepage = () => {
   const projects = data?.projects || [];
 
     return (
+      <VStack w='100%'>
+        <Flex>
+          <Heading m={8} fontSize='50px' fontWeight='bold'>Welcome!</Heading>
+        </Flex>
+
+        <Flex>
+          <Text align='center' fontSize='3xl' fontWeight='bold'>The Bike Project Tracker will help you track the progress of your bike customizations.</Text>
+        </Flex>
+
+        <Flex>
+          <Text align='center' fontSize='3xl' fontWeight='bold'>Check out the bikes we've customized below.</Text>
+        </Flex>
+      
         <ProjectList 
         projects={projects}
           />
+      </VStack>
       
     )
   }

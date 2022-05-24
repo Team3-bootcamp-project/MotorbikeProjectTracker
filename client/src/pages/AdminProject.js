@@ -18,25 +18,25 @@ function AdminProject(){
 
         <VStack w='100%'>
             <Center mt={8} mb={8} h='100px'>
-                <Heading>Project Name</Heading>
+                <Heading fontSize='50px' fontWeight='bold'>Project Name</Heading>
             </Center>
 
             <Wrap spacing='30px' align='center'>
                 <WrapItem>
                     <Center>
-                        <Image boxSize='200px' m={8}  shadow='md' src='picture.png' fallbackSrc='https://via.placeholder.com/150' />
+                        <Image shadow='md' boxSize='300px' m={8} borderStyle='solid' borderColor='black' border='4px' src='https://cdn.visordown.com/12651_0.jpg' fallbackSrc='https://via.placeholder.com/150' />
                      </Center>
                 </WrapItem>
 
                 <WrapItem>
                     <Center >
-                        <Image boxSize='200px' m={8} shadow='md' src='picture.png' fallbackSrc='https://via.placeholder.com/150' />
+                        <Image shadow='md' boxSize='300px' m={8} borderStyle='solid' borderColor='black' border='4px' src='https://www.motorcyclespecs.co.za/Gallery%20B/Ducati%20GT1000%2006%20%201.jpg' fallbackSrc='https://via.placeholder.com/150' />
                     </Center>
                 </WrapItem>
   
 </Wrap>
 
-            <Stack p={8} spacing={8} direction='row' m>
+            <Stack p={8} spacing={8} direction='row' bg='#652226' borderColor='black' border='4px'>
                  <Feature
                     title='Bike Details'
                     make='Make:'
@@ -44,16 +44,17 @@ function AdminProject(){
                     notes='Notes:'
                     desc='The future can be even brighter but a goal without a plan is just a wish'
                     spacing = {15}
+                    color='white'
                 />
             </Stack>
 
            
             <ButtonGroup gap='40' variant='outline' size='lg' p={10}>
-                    <Button shadow='md'>
+                    <Button shadow='md' bg='#652226' color='white' _hover={{ bgColor:'black' }}>
                         Preview Timeline
                     </Button>
                     
-                    <Button shadow='md'>
+                    <Button shadow='md' bg='#652226' color='white' _hover={{ bgColor:'black' }}>
                         Messege Mechanic
                     </Button>
                     

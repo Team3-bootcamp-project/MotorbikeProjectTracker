@@ -51,6 +51,14 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+// breakpoints for flex display on hamburger menu in navbar when screen size is small
+const breakpoints = {
+  sm: '30em',
+  md: '48em',
+  lg: '62em',
+  xl: '80em',
+}
+
 
 function App() {
   return (
