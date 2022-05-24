@@ -7,15 +7,28 @@ import { useQuery } from '@apollo/client';
 import { QUERY_SINGLE_PROJECT } from '../utils/queries';
 import ErrorPage from './ErrorPage';
 
-function Feature({ title, desc, make, year, notes, ...rest }) {
+function Feature({ title, desc, make, year, model, w1, w2, w3, w4, w5, ...rest }) {
     return (
-      <Box p={5} shadow='md' borderWidth='1px' {...rest}>
+    <Box>
+      <Box p={3} shadow='md' borderWidth='1px' {...rest}>
         <Heading fontSize='xl'>{title}</Heading>
         <Text mt={8}>{make}</Text>
         <Text mt={8}>{year}</Text>
-        <Text mt={8}>{notes}</Text>
+        <Text mt={8}>{model}</Text>
         <Text mt={4}>{desc}</Text>
       </Box>
+      <Box p={3} shadow='md' borderWidth='1px' {...rest}>
+      <Heading fontSize='lg'>Work Done</Heading>
+        <Text>Cosmetic:</Text>
+        <Text mb={3} >{w1}</Text>
+        <Text >Engine/Power:</Text>
+        <Text mb={3} >{w2}</Text>
+        <Text>Electrical/Accessories:</Text>
+        <Text mb={3}>{w3}</Text>
+        <Text>Suspension:</Text>
+        <Text mb={3}>{w5}</Text>
+      </Box>
+    </Box>
     )
   }
 
@@ -80,7 +93,12 @@ const  SingleProject = () => {
                     make={Make}
                     year={Year}
                     model={Model}
-                    work= {work0}
+                    w= {work0}
+                    w1= {work0}
+                    w2= {work1}
+                    w3= {work2}
+                    w4= {work3}
+                    w5= {work4}
                     spacing = {15}
                     color='white'
                 />
