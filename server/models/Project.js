@@ -13,7 +13,7 @@ const eventSchema = new Schema({
   title: {
       type: String
   },
-  eventPhotos: {
+  eventPhoto: {
     type: String
   }
 })
@@ -84,9 +84,14 @@ const projectSchema = new Schema({
   },
   timeline: [eventSchema],
   
-  photos: {
-    type: String
-  }
+  photos: [
+    {
+      link: { type: String },
+      linkb: { type: String }
+    }
+  ]
+  
+  
 
 });
 
