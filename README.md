@@ -14,7 +14,7 @@
 
 ## Description
 This is a tracking service for a motorcycle customs shop. Similar to what restaurant delivery services do, but instead of receiving a pizza after 45 minutes or less, you get a customized to your liking motorcycle after a six month wait. It uses the MERN stack and GraphQL for API calls 
-
+![Screenshot](https://github.com/Team3-bootcamp-project/MotorbikeProjectTracker/blob/main/screenshot.png)
 ## Installation
 After downloading the repo, navigate to that folder in the terminal, run "npm run build" and it's ready to use
 
